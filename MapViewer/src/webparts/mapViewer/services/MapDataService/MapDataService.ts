@@ -5,7 +5,7 @@ export default class MapDataService implements IMapDataService {
 
     constructor (serviceProps: IMapDataServiceProps) { }
 
-    getMapPoints(): Promise<ILocation[]> {
+    public getMapPoints(): Promise<ILocation[]> {
 
         return new Promise<ILocation[]>(resolve => {
             resolve(this.mockItems);

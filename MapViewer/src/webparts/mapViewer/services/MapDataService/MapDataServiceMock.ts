@@ -3,7 +3,7 @@ import { IMapDataService } from './IMapDataService';
 
 export default class MapDataServiceMock implements IMapDataService {
 
-    getMapPoints(): Promise<ILocation[]> {
+    public getMapPoints(): Promise<ILocation[]> {
 
         return new Promise<ILocation[]>(resolve => {
             resolve(this.mockItems);
