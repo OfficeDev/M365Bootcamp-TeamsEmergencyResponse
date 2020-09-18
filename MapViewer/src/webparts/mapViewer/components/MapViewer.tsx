@@ -1,7 +1,10 @@
 import * as React from 'react';
 import styles from './MapViewer.module.scss';
-import { IMapViewerProps } from './IMapViewerProps';
 import { escape } from '@microsoft/sp-lodash-subset';
+
+export interface IMapViewerProps {
+  description: string;
+}
 
 export default class MapViewer extends React.Component<IMapViewerProps, {}> {
   public render(): React.ReactElement<IMapViewerProps> {

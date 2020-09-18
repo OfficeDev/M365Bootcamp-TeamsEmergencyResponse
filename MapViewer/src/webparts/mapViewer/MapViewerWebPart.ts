@@ -8,8 +8,7 @@ import {
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 
 import * as strings from 'MapViewerWebPartStrings';
-import MapViewer from './components/MapViewer';
-import { IMapViewerProps } from './components/IMapViewerProps';
+import MapViewer, { IMapViewerProps } from './components/MapViewer';
 
 export interface IMapViewerWebPartProps {
   description: string;
