@@ -12,14 +12,15 @@
     "test": "gulp test"
   },
   "dependencies": {
-    "react": "16.8.5",
-    "react-dom": "16.8.5",
-    "office-ui-fabric-react": "6.214.0",
     "@microsoft/sp-core-library": "1.11.0",
+    "@microsoft/sp-lodash-subset": "1.11.0",
+    "@microsoft/sp-office-ui-fabric-core": "1.11.0",
     "@microsoft/sp-property-pane": "1.11.0",
     "@microsoft/sp-webpart-base": "1.11.0",
-    "@microsoft/sp-lodash-subset": "1.11.0",
-    "@microsoft/sp-office-ui-fabric-core": "1.11.0"
+    "office-ui-fabric-react": "6.214.0",
+    "react": "16.8.5",
+    "react-bingmaps": "^3.6.1",
+    "react-dom": "16.8.5"
   },
   "devDependencies": {
     "@types/react": "16.8.8",

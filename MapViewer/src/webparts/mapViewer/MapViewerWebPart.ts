@@ -11,7 +11,7 @@ import * as strings from 'MapViewerWebPartStrings';
 import MapViewer, { IMapViewerProps } from './components/MapViewer';
 
 export interface IMapViewerWebPartProps {
-  description: string;
+  credentials: string;
 }
 
 export default class MapViewerWebPart extends BaseClientSideWebPart<IMapViewerWebPartProps> {
@@ -20,7 +20,7 @@ export default class MapViewerWebPart extends BaseClientSideWebPart<IMapViewerWe
     const element: React.ReactElement<IMapViewerProps> = React.createElement(
       MapViewer,
       {
-        description: this.properties.description
+        credentials: this.properties.credentials
       }
     );
 
@@ -46,8 +46,8 @@ export default class MapViewerWebPart extends BaseClientSideWebPart<IMapViewerWe
             {
               groupName: strings.BasicGroupName,
               groupFields: [
-                PropertyPaneTextField('description', {
-                  label: strings.DescriptionFieldLabel
+                PropertyPaneTextField('credentials', {
+                  label: strings.CredentialsFieldLabel
                 })
               ]
             }

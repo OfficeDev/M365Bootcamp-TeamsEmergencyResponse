@@ -1,7 +1,7 @@
 declare interface IMapViewerWebPartStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
-  DescriptionFieldLabel: string;
+  CredentialsFieldLabel: string;
 }
 
 declare module 'MapViewerWebPartStrings' {

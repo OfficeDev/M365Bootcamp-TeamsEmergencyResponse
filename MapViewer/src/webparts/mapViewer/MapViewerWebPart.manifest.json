@@ -21,7 +21,7 @@
     "description": { "default": "View a map with points set in a SharePoint list" },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "description": "MapViewer"
+      "credentials": ""
     }
   }]
 }
