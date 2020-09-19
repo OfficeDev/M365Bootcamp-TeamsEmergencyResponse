@@ -46,11 +46,11 @@ export default class MapViewer extends React.Component<IMapViewerProps, IMapView
       );
     } else {
       return (
-        <div style={{ width: "100vw", height: "70vh" }}>
+        <div style={{ width: "70vw", height: "70vh" }}>
           <ReactBingmaps
             bingmapKey={this.props.credentials}
-            center={[40.6782, -73.9442]}
-            zoom={10}
+            center={this.getCenter(this.state.points)}
+            zoom={12}
             pushPins={this.state.points.map(
               p => ({
                 "location": [p.latitude, p.longitude],
@@ -62,9 +62,20 @@ export default class MapViewer extends React.Component<IMapViewerProps, IMapView
       );
     }
   }
+
+  private getCenter(points: ILocation[]): number[] {
+    if (points.length === 0) {
+      return [];
+    } else {
+      // Compute the centroid
+      let sumX = 0;
+      let sumY = 0;
+      for (let p of points) {
+        sumX += p.latitude;
+        sumY += p.longitude;
+      }
+      return [sumX/points.length, sumY/points.length]
+    }
+ }
 }
 
-
-// {
-//   "location":[13.0827, 80.2707], "option":{ color: 'red' }, "addHandler": {"type" : "click", callback: this.callBackMethod }
-// },

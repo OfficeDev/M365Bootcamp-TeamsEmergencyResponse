@@ -11,9 +11,9 @@ export default class ServiceFactory {
         serviceProps: IMapDataServiceProps): IMapDataService {
 
             if (environmentType === EnvironmentType.Local) {
-                return new MapDataService(serviceProps);
-            } else {
                 return new MapDataServiceMock();
+            } else {
+                return new MapDataService(serviceProps);
             }
     }
 
