@@ -21,7 +21,9 @@
     "description": { "default": "View a map with points set in a SharePoint list" },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "credentials": ""
+      "credentials": "",
+      "zoom": "12",
+      "mapType": "aerial"
     }
   }]
 }

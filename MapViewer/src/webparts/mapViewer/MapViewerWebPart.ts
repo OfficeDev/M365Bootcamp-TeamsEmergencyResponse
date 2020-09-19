@@ -14,6 +14,8 @@ import { IMapDataService } from './services/MapDataService/IMapDataService';
 
 export interface IMapViewerWebPartProps {
   credentials: string;
+  zoom: string;
+  mapType: string;
 }
 
 export default class MapViewerWebPart extends BaseClientSideWebPart<IMapViewerWebPartProps> {
@@ -33,8 +35,10 @@ export default class MapViewerWebPart extends BaseClientSideWebPart<IMapViewerWe
     const element: React.ReactElement<IMapViewerProps> = React.createElement(
       MapViewer,
       {
+        mapDataService: this.mapDataService,
         credentials: this.properties.credentials,
-        mapDataService: this.mapDataService
+        zoom: parseInt(this.properties.zoom),
+        mapType: this.properties.mapType
       }
     );
 
@@ -62,6 +66,12 @@ export default class MapViewerWebPart extends BaseClientSideWebPart<IMapViewerWe
               groupFields: [
                 PropertyPaneTextField('credentials', {
                   label: strings.CredentialsFieldLabel
+                }),
+                PropertyPaneTextField('zoom', {
+                  label: strings.ZoomFieldLabel
+                }),
+                PropertyPaneTextField('mapType', {
+                  label: strings.MapTypeFieldLabel
                 })
               ]
             }

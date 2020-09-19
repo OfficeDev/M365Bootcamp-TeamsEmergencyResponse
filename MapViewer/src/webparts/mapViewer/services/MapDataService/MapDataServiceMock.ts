@@ -33,7 +33,14 @@ export default class MapDataServiceMock implements IMapDataService {
                 subtitle: '9 acre park in Manhattan',
                 latitude: 40.7536,
                 longitude: -73.9832
-            }
+            },
+            // {
+            //     pushpinNumber: 4,
+            //     title: 'Seattle',
+            //     subtitle: 'Test',
+            //     latitude: 47.6062,
+            //     longitude: -122.3321
+            // }
 
         ];
 
