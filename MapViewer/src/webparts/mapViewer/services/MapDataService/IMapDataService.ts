@@ -7,5 +7,5 @@ export interface IMapDataServiceProps {
 }
 
 export interface IMapDataService {
-    getMapPoints(): Promise<ILocation[]> | string;
+    getMapPoints(): Promise<ILocation[] | string>;
 }

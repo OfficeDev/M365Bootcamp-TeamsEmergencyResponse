@@ -7,9 +7,10 @@ export default class MapDataService implements IMapDataService {
 
     public getMapPoints(): Promise<ILocation[]> {
 
-        return new Promise<ILocation[]>(resolve => {
-            resolve(this.mockItems);
-        });
+        return new Promise<ILocation[]> ((resolve => {
+            resolve (this.mockItems);
+        }));
+
     }
 
     private mockItems =
@@ -19,21 +20,21 @@ export default class MapDataService implements IMapDataService {
                 title: 'Statue of Liberty',
                 subtitle: 'National Monument',
                 latitude: 40.6892,
-                longitude: 74.0445
+                longitude: -74.0445
             },
             {
                 pushpinNumber: 2,
                 title: 'Empire State Building',
                 subtitle: 'Deco skyscraper',
                 latitude: 40.7484,
-                longitude: 73.9857
+                longitude: -73.9857
             },
             {
                 pushpinNumber: 3,
                 title: 'Bryant Park',
                 subtitle: '9 acre park in Manhattan',
                 latitude: 40.7536,
-                longitude: 73.9832
+                longitude: -73.9832
             }
 
         ];

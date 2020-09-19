@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
-import { Version } from '@microsoft/sp-core-library';
+import { Version, Environment } from '@microsoft/sp-core-library';
 import {
   IPropertyPaneConfiguration,
   PropertyPaneTextField
@@ -9,6 +9,8 @@ import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 
 import * as strings from 'MapViewerWebPartStrings';
 import MapViewer, { IMapViewerProps } from './components/MapViewer';
+import ServiceFactory from './services/ServiceFactory';
+import { IMapDataService } from './services/MapDataService/IMapDataService';
 
 export interface IMapViewerWebPartProps {
   credentials: string;
@@ -16,11 +18,23 @@ export interface IMapViewerWebPartProps {
 
 export default class MapViewerWebPart extends BaseClientSideWebPart<IMapViewerWebPartProps> {
 
+  private mapDataService: IMapDataService;
+
+  public onInit(): Promise<void> {
+    return new Promise<void> ((resolve, reject) => {
+      this.mapDataService = ServiceFactory.getMapDataService(
+        Environment.type, { context: this.context }
+      );
+      resolve();
+    });
+  }
+
   public render(): void {
     const element: React.ReactElement<IMapViewerProps> = React.createElement(
       MapViewer,
       {
-        credentials: this.properties.credentials
+        credentials: this.properties.credentials,
+        mapDataService: this.mapDataService
       }
     );
 
