@@ -1,9 +1,9 @@
 import ILocation from '../../model/ILocation';
-import { WebPartContext } from '@microsoft/sp-webpart-base';
+import { IGraphService } from '../GraphService/IGraphService';
 
 // Passed to service in the constructor
 export interface IMapDataServiceProps {
-    context: WebPartContext;
+    graphService: IGraphService;
 }
 
 export interface IMapDataService {

@@ -22,13 +22,10 @@ export default class MapViewerWebPart extends BaseClientSideWebPart<IMapViewerWe
 
   private mapDataService: IMapDataService;
 
-  public onInit(): Promise<void> {
-    return new Promise<void> ((resolve, reject) => {
-      this.mapDataService = ServiceFactory.getMapDataService(
-        Environment.type, { context: this.context }
+  public async onInit(): Promise<void> {
+      this.mapDataService = await ServiceFactory.getMapDataService(
+        Environment.type, this.context
       );
-      resolve();
-    });
   }
 
   public render(): void {
