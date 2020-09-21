@@ -6,12 +6,18 @@
     "version": "1.0.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Sites.ReadWrite.All"
+      }
+    ],
     "isDomainIsolated": false,
     "developer": {
-      "name": "",
-      "websiteUrl": "",
-      "privacyUrl": "",
-      "termsOfUseUrl": "",
+      "name": "Bob German",
+      "websiteUrl": "https://bob1german.com",
+      "privacyUrl": "https://privacy.microsoft.com",
+      "termsOfUseUrl": "https://opensource.microsoft.com/",
       "mpnId": ""
     }
   },
