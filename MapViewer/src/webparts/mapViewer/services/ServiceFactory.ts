@@ -22,7 +22,15 @@ export default class ServiceFactory {
                 const graphService = new GraphService({
                     graphClient: graphClient
                 });
-                return new MapDataService({ graphService: graphService });
+                const siteId =
+                    window.location.hostname + ',' +
+                    context.pageContext.site.id.toString() + ',' +
+                    context.pageContext.web.id.toString();
+
+                return new MapDataService({ 
+                    graphService: graphService,
+                    siteId: siteId
+                 });
             }
     }
 
