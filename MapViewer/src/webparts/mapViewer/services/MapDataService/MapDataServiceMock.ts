@@ -11,6 +11,10 @@ export default class MapDataServiceMock implements IMapDataService {
 
     }
 
+    public getEditUrl(): string {
+        return "#";
+    }
+
     private mockItems =
         [
             {

@@ -1,5 +1,4 @@
 import * as React from 'react';
-// import styles from './MapViewer.module.scss';
 import { ReactBingmaps } from 'react-bingmaps';
 import { IMapDataService } from '../services/MapDataService/IMapDataService';
 import Pushpin from '../model/IPushpin';
@@ -76,7 +75,9 @@ export default class MapViewer extends React.Component<IMapViewerProps, IMapView
               )}
             />
           </div>
-          <MessagePanel mapDataService={this.props.mapDataService} message="Hello world" />
+          <MessagePanel 
+            mapDataService={this.props.mapDataService} 
+            message="Hello world" />
         </div>
       );
     }

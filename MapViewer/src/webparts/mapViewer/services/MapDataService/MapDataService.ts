@@ -1,6 +1,6 @@
 import IPushpin, { PushpinMapper } from '../../model/IPushpin';
 import { IMapDataService, IMapDataServiceProps } from './IMapDataService';
-import * as Constants from '../../constants';
+import * as Constants from '../../Constants';
 
 export default class MapDataService implements IMapDataService {
 
@@ -16,6 +16,13 @@ export default class MapDataService implements IMapDataService {
             this.serviceProps.siteId, listId, new PushpinMapper()
         );
         return (points);
+
+    }
+
+    public getEditUrl () {
+
+        const webUrl = this.serviceProps.context.pageContext.web.absoluteUrl;
+        return `${webUrl}/Lists/${Constants.LIST_NAME}/AllItems.aspx`;
 
     }
 

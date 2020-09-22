@@ -40,6 +40,7 @@ export default class ServiceFactory {
             // New up the Map Data Service, passing its dependencies
             return new MapDataService({
                 graphService: graphService,
+                context: context,
                 siteId: siteId
             });
         }
