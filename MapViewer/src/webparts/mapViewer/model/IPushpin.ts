@@ -1,6 +1,5 @@
 import IMapper from './IMapper';
 
-
 export default interface IPushpin {
     pushpinNumber: number;
     title: string;
@@ -21,6 +20,10 @@ interface IListItem {
 }
 
 export class PushpinMapper implements IMapper {
+
+    public getFieldNames(): string {
+        return ('Title,Subtitle,Pushpin,latitude,longitude');
+    }
 
     public getMappedValues(listItems: IListItem[]): IPushpin[] {
 

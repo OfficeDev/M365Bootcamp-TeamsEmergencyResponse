@@ -32,7 +32,7 @@ export default class GraphService implements IGraphService {
         return new Promise<T[]>((resolve, reject) => {
             const query = client.api(
                 `/sites/${siteId}/lists/${listId}/items`
-            ).expand('fields($select%3DTitle,Subtitle,Pushpin,latitude,longitude)');
+            ).expand(`fields($select%3D${mapper.getFieldNames()})`);
 
             query.get((error: GraphError, response: any) => {
                 if (error) {
