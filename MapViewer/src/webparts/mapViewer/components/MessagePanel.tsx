@@ -8,6 +8,7 @@ import * as microsoftTeams from "@microsoft/teams-js";
 export interface IMessagePanelProps {
     mapDataService: IMapDataService;
     message: string;
+    refresh: () => void;
 }
 
 
@@ -46,7 +47,7 @@ export default class MessagePanel extends React.Component<IMessagePanelProps, {}
     }
 
     private completeEditor() {
-        alert('DONE');
+        this.props.refresh();
     }
 
 }
