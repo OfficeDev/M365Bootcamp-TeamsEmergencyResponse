@@ -1,8 +1,7 @@
-import { IGraphService, IGraphServiceProps, ISPFieldMapping } from './IGraphService';
+import IMapper from '../../model/IMapper';
+import { IGraphService, IGraphServiceProps } from './IGraphService';
 import { GraphError } from '@microsoft/microsoft-graph-client';
 import * as MicrosoftGraph from '@microsoft/microsoft-graph-types';
-import ILocation from '../../model/ILocation';
-import { DocumentCardTitle } from 'office-ui-fabric-react';
 
 export default class GraphService implements IGraphService {
 
@@ -25,29 +24,22 @@ export default class GraphService implements IGraphService {
         });
     }
 
-    public async getListItems(siteId: string, listId: string, fieldMapping: ISPFieldMapping):
-    Promise<ILocation[]> {
+    public async getListItems<T>(siteId: string, listId: string, mapper: IMapper):
+    Promise<T[]> {
+
         const client = this.serviceProps.graphClient;
 
-        return new Promise<ILocation[]>((resolve, reject) => {
+        return new Promise<T[]>((resolve, reject) => {
             const query = client.api(
                 `/sites/${siteId}/lists/${listId}/items`
             ).expand('fields($select%3DTitle,Subtitle,Pushpin,latitude,longitude)');
+
             query.get((error: GraphError, response: any) => {
                 if (error) {
                     reject(error);
                 } else {
-                    const result: ILocation[] = [];
-                    for (let item of response.value) {
-                        result.push({
-                            title: item.fields.Title,
-                            subtitle: item.fields.Subtitle,
-                            pushpinNumber: item.fields.Pushpin,
-                            latitude: item.fields.latitude,
-                            longitude: item.fields.longitude
-                        });
-                    }
-
+  
+                    const result = mapper.getMappedValues(response.value);
                     resolve(result);
                 }
             });

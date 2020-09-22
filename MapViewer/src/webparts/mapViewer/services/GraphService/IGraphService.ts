@@ -1,13 +1,7 @@
 import { MSGraphClient } from '@microsoft/sp-http';
-import ILocation from '../../model/ILocation';
+import IMapper from '../../model/IMapper';
 
 export enum FieldType { stringField, numberFieldType }
-
-export interface ISPFieldMapping {
-    spFieldName: string;
-    resultFieldName: string;
-    type: FieldType;
-}
 
 // Passed to service in the constructor
 export interface IGraphServiceProps {
@@ -16,6 +10,6 @@ export interface IGraphServiceProps {
 
 export interface IGraphService {
     getListId(siteId: string, listName: string): Promise<string>;
-    getListItems(siteId: string, listId: string, fieldMapping: ISPFieldMapping): 
-        Promise<ILocation []>;
+    getListItems<T>(siteId: string, listId: string, mapper: IMapper): 
+        Promise<T []>;
 }

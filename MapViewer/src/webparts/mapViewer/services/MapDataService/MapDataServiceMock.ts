@@ -1,11 +1,11 @@
-import ILocation from '../../model/ILocation';
+import Pushpin from '../../model/IPushpin';
 import { IMapDataService } from './IMapDataService';
 
 export default class MapDataServiceMock implements IMapDataService {
 
-    public getMapPoints(): Promise<ILocation[]> {
+    public getMapPoints(): Promise<Pushpin[]> {
 
-        return new Promise<ILocation[]> ((resolve => {
+        return new Promise<Pushpin[]> ((resolve => {
             resolve (this.mockItems);
         }));
 

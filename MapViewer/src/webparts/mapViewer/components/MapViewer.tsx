@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from './MapViewer.module.scss';
 import { escape } from '@microsoft/sp-lodash-subset';
 import { ReactBingmaps } from 'react-bingmaps';
-import ILocation from '../model/ILocation';
+import Pushpin from '../model/IPushpin';
 import { IMapDataService } from '../services/MapDataService/IMapDataService';
 import { RefObject } from 'office-ui-fabric-react';
 
@@ -15,7 +15,7 @@ export interface IMapViewerProps {
 
 export interface IMapViewerState {
   dataLoaded: boolean;
-  points: ILocation[];
+  points: Pushpin[];
 }
 
 export default class MapViewer extends React.Component<IMapViewerProps, IMapViewerState> {
@@ -32,7 +32,7 @@ export default class MapViewer extends React.Component<IMapViewerProps, IMapView
 
   public componentDidMount() {
     this.props.mapDataService.getMapPoints()
-      .then((points: ILocation[]) => {
+      .then((points: Pushpin[]) => {
         this.setState({
           dataLoaded: true,
           points: points
@@ -74,7 +74,7 @@ export default class MapViewer extends React.Component<IMapViewerProps, IMapView
     }
   }
 
-  private getCenter(points: ILocation[]): number[] {
+  private getCenter(points: Pushpin[]): number[] {
     if (points.length === 0) {
       return [];
     } else {

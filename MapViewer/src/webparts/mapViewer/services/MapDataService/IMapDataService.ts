@@ -1,4 +1,4 @@
-import ILocation from '../../model/ILocation';
+import Pushpin from '../../model/IPushpin';
 import { IGraphService } from '../GraphService/IGraphService';
 
 // Passed to service in the constructor
@@ -7,5 +7,5 @@ export interface IMapDataServiceProps {
 }
 
 export interface IMapDataService {
-    getMapPoints(): Promise<ILocation[] | string>;
+    getMapPoints(): Promise<Pushpin[] | string>;
 }
