@@ -18,6 +18,11 @@ export default class MessagePanel extends React.Component<IMessagePanelProps, {}
             </div>
         );
     }
+
+
+    // https://bgtest18.sharepoint.com/sites/EmergencyResponse/Lists/MapViewPoints/AllItems.aspx
+
+    
 }
 
 

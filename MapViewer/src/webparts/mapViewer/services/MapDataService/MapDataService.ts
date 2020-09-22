@@ -1,5 +1,6 @@
 import IPushpin, { PushpinMapper } from '../../model/IPushpin';
 import { IMapDataService, IMapDataServiceProps } from './IMapDataService';
+import * as Constants from '../../constants';
 
 export default class MapDataService implements IMapDataService {
 
@@ -7,10 +8,8 @@ export default class MapDataService implements IMapDataService {
 
     public async getMapPoints(): Promise<IPushpin[]> {
 
-        const listName = 'MapViewPoints';
-
         const listId = await this.serviceProps.graphService.getListId(
-            this.serviceProps.siteId, listName
+            this.serviceProps.siteId, Constants.LIST_NAME
         );
 
         const points = await this.serviceProps.graphService.getListItems<IPushpin>(
