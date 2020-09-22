@@ -4,6 +4,7 @@ import { ReactBingmaps } from 'react-bingmaps';
 import { IMapDataService } from '../services/MapDataService/IMapDataService';
 import Pushpin from '../model/IPushpin';
 import MessagePanel from './MessagePanel';
+import styles from './MapViewer.module.scss';
 
 export interface IMapViewerProps {
   mapDataService: IMapDataService;
@@ -42,32 +43,39 @@ export default class MapViewer extends React.Component<IMapViewerProps, IMapView
   public render(): React.ReactElement<IMapViewerProps> {
     if (!this.props.credentials) {
       return (
-        <div>Please configure Bing Map credentials</div>
+        <div className={styles.mapViewer}>
+          Please configure Bing Map key. You can obtain one free at the
+          <a href="https://www.bingmapsportal.com/" target="_blank">Bing Maps Dev Center</a>
+        </div>
       );
     } else if (this.props.zoom < 1 || this.props.zoom > 19) {
       return (
-        <div>Please configure a valid zoom level, normally between 1 (widest view) and 19 (closest view)</div>
+        <div className={styles.mapViewer}>
+          Please configure a valid zoom level, normally between 1 (widest view) and 19 (closest view)
+        </div>
       );
     } else if (!this.state.dataLoaded) {
       return (
-        <div style={{ width: "90vw", height: "90vh" }}
+        <div className={styles.mapViewer}
           ref={this.container}>Loading ...</div>
       );
     } else {
       return (
-        <div style={{ width: "90vw", height: "90vh" }}>
-          <ReactBingmaps
-            bingmapKey={this.props.credentials}
-            center={this.getCenter(this.state.points)}
-            zoom={this.props.zoom}
-            mapTypeId={this.props.mapType}
-            pushPins={this.state.points.map(
-              p => ({
-                "location": [p.latitude, p.longitude],
-                "option": { color: 'red' }
-              })
-            )}
-          />
+        <div className={styles.mapViewer}>
+          <div className={styles.mapContainer}>
+            <ReactBingmaps
+              bingmapKey={this.props.credentials}
+              center={this.getCenter(this.state.points)}
+              zoom={this.props.zoom}
+              mapTypeId={this.props.mapType}
+              pushPins={this.state.points.map(
+                p => ({
+                  "location": [p.latitude, p.longitude],
+                  "option": { color: 'red' }
+                })
+              )}
+            />
+          </div>
           <MessagePanel mapDataService={this.props.mapDataService} message="Hello world" />
         </div>
       );
