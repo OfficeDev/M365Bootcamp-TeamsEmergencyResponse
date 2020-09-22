@@ -1,3 +1,5 @@
+// Describes a class that can be used by the Graph Service to
+// query a specific list and map its items into a model class
 export default interface IMapper {
     // Returns a comma-separated list of SP field values
     getFieldNames(): string;

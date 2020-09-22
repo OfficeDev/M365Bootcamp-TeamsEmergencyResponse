@@ -1,10 +1,8 @@
 import * as React from 'react';
-import styles from './MapViewer.module.scss';
-import { escape } from '@microsoft/sp-lodash-subset';
+// import styles from './MapViewer.module.scss';
 import { ReactBingmaps } from 'react-bingmaps';
 import Pushpin from '../model/IPushpin';
 import { IMapDataService } from '../services/MapDataService/IMapDataService';
-import { RefObject } from 'office-ui-fabric-react';
 
 export interface IMapViewerProps {
   mapDataService: IMapDataService;
@@ -51,12 +49,12 @@ export default class MapViewer extends React.Component<IMapViewerProps, IMapView
       );
     } else if (!this.state.dataLoaded) {
       return (
-        <div style={{ width: "70vw", height: "70vh" }}
-        ref={this.container}>Loading ...</div>
+        <div style={{ width: "90vw", height: "90vh" }}
+          ref={this.container}>Loading ...</div>
       );
     } else {
       return (
-        <div style={{ width: "70vw", height: "70vh" }}>
+        <div style={{ width: "90vw", height: "90vh" }}>
           <ReactBingmaps
             bingmapKey={this.props.credentials}
             center={this.getCenter(this.state.points)}

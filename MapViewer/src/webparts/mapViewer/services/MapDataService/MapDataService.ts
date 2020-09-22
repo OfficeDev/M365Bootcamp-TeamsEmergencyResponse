@@ -3,7 +3,7 @@ import { IMapDataService, IMapDataServiceProps } from './IMapDataService';
 
 export default class MapDataService implements IMapDataService {
 
-    constructor (private serviceProps: IMapDataServiceProps) { }
+    constructor(private serviceProps: IMapDataServiceProps) { }
 
     public async getMapPoints(): Promise<IPushpin[]> {
 
@@ -13,11 +13,11 @@ export default class MapDataService implements IMapDataService {
             this.serviceProps.siteId, listName
         );
 
-        const points = await this.serviceProps.graphService.getListItems<IPushpin> (
+        const points = await this.serviceProps.graphService.getListItems<IPushpin>(
             this.serviceProps.siteId, listId, new PushpinMapper()
         );
         return (points);
-        
+
     }
 
 }

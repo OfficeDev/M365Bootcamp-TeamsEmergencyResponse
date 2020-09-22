@@ -1,5 +1,6 @@
 import IMapper from './IMapper';
 
+// Model class that describes a pushpin on the map
 export default interface IPushpin {
     pushpinNumber: number;
     title: string;
@@ -8,17 +9,19 @@ export default interface IPushpin {
     longitude: number;
 }
 
-// Mapping from SharePoint list items
+// SharePoint list item details used in mapping
 interface IListItem {
-        fields: {
-            Title: string;
-            Subtitle: string;
-            Pushpin: number;
-            latitude: number;
-            longitude: number;
+    fields: {
+        Title: string;
+        Subtitle: string;
+        Pushpin: number;
+        latitude: number;
+        longitude: number;
     };
 }
 
+// Class to obtain the SharePoint field names (for select) and 
+// to map SharePoint list items to model items
 export class PushpinMapper implements IMapper {
 
     public getFieldNames(): string {

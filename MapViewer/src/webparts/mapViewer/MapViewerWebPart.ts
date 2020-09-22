@@ -23,9 +23,9 @@ export default class MapViewerWebPart extends BaseClientSideWebPart<IMapViewerWe
   private mapDataService: IMapDataService;
 
   public async onInit(): Promise<void> {
-      this.mapDataService = await ServiceFactory.getMapDataService(
-        Environment.type, this.context
-      );
+    this.mapDataService = await ServiceFactory.getMapDataService(
+      Environment.type, this.context
+    );
   }
 
   public render(): void {
@@ -53,7 +53,7 @@ export default class MapViewerWebPart extends BaseClientSideWebPart<IMapViewerWe
   protected get disableReactivePropertyChanges(): boolean {
     return true;
   }
-  
+
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [

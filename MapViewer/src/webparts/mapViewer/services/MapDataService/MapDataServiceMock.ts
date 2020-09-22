@@ -5,8 +5,8 @@ export default class MapDataServiceMock implements IMapDataService {
 
     public getMapPoints(): Promise<Pushpin[]> {
 
-        return new Promise<Pushpin[]> ((resolve => {
-            resolve (this.mockItems);
+        return new Promise<Pushpin[]>((resolve => {
+            resolve(this.mockItems);
         }));
 
     }
