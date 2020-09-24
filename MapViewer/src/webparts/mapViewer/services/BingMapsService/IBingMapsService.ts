@@ -1,7 +1,9 @@
+import IPushpin from '../../model/IPushpin';
+
 export interface IBingMapsServiceProps {
     credentials: string;
 }
 
 export interface IBingMapsService {
-    loadBingApi(): Promise<void>;
+    geoCode(address: string) : Promise<IPushpin | string>;
 }

@@ -77,7 +77,7 @@ export default class MapViewer extends React.Component<IMapViewerProps, IMapView
           </div>
           <MessagePanel 
             mapDataService={this.props.mapDataService} 
-            message="" 
+            message=""
             refresh={() => {
               this.props.mapDataService.getMapPoints()
               .then((points: Pushpin[]) => {

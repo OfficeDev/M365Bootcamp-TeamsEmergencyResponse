@@ -1,13 +1,21 @@
 import { IBingMapsService, IBingMapsServiceProps } from './IBingMapsService';
+import IPushpin from '../../model/IPushpin';
 
-class BingMapsService {
+export default class BingMapsService implements IBingMapsService {
 
     private credentials;
     constructor(props: IBingMapsServiceProps) {
         this.credentials = props.credentials;
     }
 
-    public loadBingApi(): Promise<void> {
-        return Promise.resolve();
+    public async geoCode (address: string) : Promise<IPushpin | string> {
+        return ({
+            pushpinNumber: 1,
+            title: 'Statue of Liberty',
+            subtitle: 'National Monument',
+            address: 'Statue of Liberty',
+            latitude: 40.6892,
+            longitude: -74.0445
+        })
     }
 }

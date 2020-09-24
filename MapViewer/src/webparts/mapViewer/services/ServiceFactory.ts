@@ -5,13 +5,16 @@ import { IMapDataService } from './MapDataService/IMapDataService';
 import MapDataService from './MapDataService/MapDataService';
 import MapDataServiceMock from './MapDataService/MapDataServiceMock';
 
+import * as Constants from '../Constants';
 import GraphService from './GraphService/GraphService';
+import BingMapsService from './BingMapsService/BingMapsService';
 
 export default class ServiceFactory {
 
     public static async getMapDataService(
         environmentType: EnvironmentType,
-        context: WebPartContext): Promise<IMapDataService> {
+        context: WebPartContext,
+        bingMapsCredentials: string): Promise<IMapDataService> {
 
         if (environmentType === EnvironmentType.Local) {
 
@@ -37,15 +40,22 @@ export default class ServiceFactory {
                 context.pageContext.web.id.toString()
             ].join(',');
 
+            const bingMapsService = this.getBingMapsService(bingMapsCredentials);
+
             // New up the Map Data Service, passing its dependencies
             return new MapDataService({
                 graphService: graphService,
+                bingMapsService: bingMapsService,
                 context: context,
                 siteId: siteId
             });
         }
     }
 
-
+    private static getBingMapsService(credentials: string) {
+        return new BingMapsService({
+            credentials: credentials
+        });
+    }
 
 }

@@ -24,7 +24,9 @@ export default class MapViewerWebPart extends BaseClientSideWebPart<IMapViewerWe
 
   public async onInit(): Promise<void> {
     this.mapDataService = await ServiceFactory.getMapDataService(
-      Environment.type, this.context
+      Environment.type,
+      this.context,
+      this.properties.credentials
     );
   }
 
