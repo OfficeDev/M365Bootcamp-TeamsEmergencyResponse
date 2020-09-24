@@ -33,7 +33,7 @@ interface IListItem {
 export class PushpinMapper implements IMapper {
 
     public getFieldNames(): string {
-        return ('Title,Subtitle,Pushpin,latitude,longitude');
+        return ('Title,Subtitle,Pushpin,Address,City,StateProvince,Country,latitude,longitude');
     }
 
     public getMappedValues(listItems: IListItem[]): IPushpin[] {

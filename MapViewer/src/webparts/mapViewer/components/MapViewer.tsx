@@ -30,7 +30,7 @@ export default class MapViewer extends React.Component<IMapViewerProps, IMapView
   }
 
   public componentDidMount() {
-    this.props.mapDataService.getMapPoints()
+    this.props.mapDataService.getMapPoints(false)
       .then((points: Pushpin[]) => {
         this.setState({
           dataLoaded: true,
@@ -79,7 +79,7 @@ export default class MapViewer extends React.Component<IMapViewerProps, IMapView
             mapDataService={this.props.mapDataService} 
             message=""
             refresh={() => {
-              this.props.mapDataService.getMapPoints()
+              this.props.mapDataService.getMapPoints(true)
               .then((points: Pushpin[]) => {
                 this.setState({
                   dataLoaded: true,

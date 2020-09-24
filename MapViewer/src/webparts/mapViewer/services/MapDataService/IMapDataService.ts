@@ -13,6 +13,6 @@ export interface IMapDataServiceProps {
 
 // Public members 
 export interface IMapDataService {
-    getMapPoints(): Promise<Pushpin[] | string>;
+    getMapPoints(geocode: boolean): Promise<Pushpin[] | string>;
     getEditUrl(): string;
 }

@@ -3,7 +3,7 @@ import { IMapDataService } from './IMapDataService';
 
 export default class MapDataServiceMock implements IMapDataService {
 
-    public getMapPoints(): Promise<Pushpin[]> {
+    public getMapPoints(geocode: boolean): Promise<Pushpin[]> {
 
         return new Promise<Pushpin[]>((resolve => {
             resolve(this.mockItems);

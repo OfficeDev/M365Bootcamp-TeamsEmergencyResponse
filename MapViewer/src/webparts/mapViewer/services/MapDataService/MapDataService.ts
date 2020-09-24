@@ -6,7 +6,7 @@ export default class MapDataService implements IMapDataService {
 
     constructor(private serviceProps: IMapDataServiceProps) { }
 
-    public async getMapPoints(): Promise<IPushpin[]> {
+    public async getMapPoints(geocode: boolean): Promise<IPushpin[]> {
 
         const listId = await this.serviceProps.graphService.getListId(
             this.serviceProps.siteId, Constants.LIST_NAME
@@ -16,15 +16,26 @@ export default class MapDataService implements IMapDataService {
             this.serviceProps.siteId, listId, new PushpinMapper()
         );
 
-        // const test = await this.serviceProps.bingMapsService.geoCode(
-        //     "USA", "Washington", "Redmond", "Microsoft Building 36"
-        // )
+        if (geocode) {
+            for (let p of points) {
+                if ((!p.latitude || !p.longitude) &&
+                    p.address || p.city || p.stateProvince || p.country) {
+                    let coordinates = await this.serviceProps.bingMapsService.geoCode(
+                        p.country, p.stateProvince, p.city, p.address
+                    );
+                    if (typeof coordinates === 'object') {
+                        p.latitude = coordinates.latitude;
+                        p.longitude = coordinates.longitude;
+                    }
+                }
+            }
+        }
 
         return (points);
 
     }
 
-    public getEditUrl () {
+    public getEditUrl() {
 
         const webUrl = this.serviceProps.context.pageContext.web.absoluteUrl;
         return `${webUrl}/Lists/${Constants.LIST_NAME}/AllItems.aspx`;
