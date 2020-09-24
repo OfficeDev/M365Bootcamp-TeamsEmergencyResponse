@@ -6,6 +6,9 @@ export default interface IPushpin {
     title: string;
     subtitle: string;
     address: string;
+    city: string;
+    stateProvince: string;
+    country: string;
     latitude: number;
     longitude: number;
 }
@@ -17,6 +20,9 @@ interface IListItem {
         Subtitle: string;
         Pushpin: number;
         Address: string;
+        City: string;
+        StateProvince: string;
+        Country: string;
         latitude: number;
         longitude: number;
     };
@@ -37,6 +43,9 @@ export class PushpinMapper implements IMapper {
             title: i.fields.Title,
             subtitle: i.fields.Subtitle,
             address: i.fields.Address,
+            city: i.fields.City,
+            stateProvince: i.fields.StateProvince,
+            country: i.fields.Country,
             latitude: i.fields.latitude,
             longitude: i.fields.longitude
         }));

@@ -94,6 +94,9 @@ export default class MapViewer extends React.Component<IMapViewerProps, IMapView
   }
 
   private getCenter(points: Pushpin[]): number[] {
+    
+    let pointCount = 0;
+
     if (points.length === 0) {
       return [];
     } else {
@@ -101,10 +104,13 @@ export default class MapViewer extends React.Component<IMapViewerProps, IMapView
       let sumX = 0;
       let sumY = 0;
       for (let p of points) {
-        sumX += p.latitude;
-        sumY += p.longitude;
+        if (p.latitude && p.longitude) {
+          sumX += p.latitude;
+          sumY += p.longitude;
+          pointCount++;
+        }
       }
-      return [sumX / points.length, sumY / points.length];
+      return [sumX / pointCount, sumY / pointCount];
     }
   }
 

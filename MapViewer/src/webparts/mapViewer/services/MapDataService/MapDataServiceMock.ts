@@ -22,6 +22,9 @@ export default class MapDataServiceMock implements IMapDataService {
                 title: 'Statue of Liberty',
                 subtitle: 'National Monument',
                 address: 'Statue of Liberty',
+                city: 'New York',
+                stateProvince: 'NY',
+                country: 'USA',
                 latitude: 40.6892,
                 longitude: -74.0445
             },
@@ -30,6 +33,9 @@ export default class MapDataServiceMock implements IMapDataService {
                 title: 'Empire State Building',
                 subtitle: 'Deco skyscraper',
                 address: '20 W 34th St, New York, NY 10001',
+                city: 'New York',
+                stateProvince: 'NY',
+                country: 'USA',
                 latitude: 40.7484,
                 longitude: -73.9857
             },
@@ -38,6 +44,9 @@ export default class MapDataServiceMock implements IMapDataService {
                 title: 'Bryant Park',
                 subtitle: '9 acre park in Manhattan',
                 address: 'Bryant Park, New York, NY',
+                city: 'New York',
+                stateProvince: 'NY',
+                country: 'USA',
                 latitude: 40.7536,
                 longitude: -73.9832
             }
