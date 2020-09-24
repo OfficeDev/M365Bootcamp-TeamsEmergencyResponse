@@ -1,0 +1,45 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.5",
+    "packageName": "MapViewerWebPart",
+    "id": "41916cd2-65ef-47c0-b3e5-7abae50907b3",
+    "version": "0.1",
+    "developer": {
+      "name": "Bob German",
+      "websiteUrl": "https://bob1german.com",
+      "privacyUrl": "https://privacy.microsoft.com",
+      "termsOfUseUrl": "https://opensource.microsoft.com/"
+    },
+    "name": {
+      "short": "Map Viewer"
+    },
+    "description": {
+      "short": "View a map with highlighted points",
+      "full": "View a map with points set in a SharePoint list"
+    },
+    "icons": {
+      "outline": "9bd912af-0f87-491c-8fc5-cfb10c98f2e9_outline.png",
+      "color": "9bd912af-0f87-491c-8fc5-cfb10c98f2e9_color.png"
+    },
+    "accentColor": "#004578",
+    "configurableTabs": [
+      {
+        "configurationUrl": "https://{teamSiteDomain}{teamSitePath}/_layouts/15/TeamsLogon.aspx?SPFX=true&dest={teamSitePath}/_layouts/15/teamshostedapp.aspx%3FopenPropertyPane=true%26teams%26componentId=9bd912af-0f87-491c-8fc5-cfb10c98f2e9%26forceLocale={locale}",
+        "canUpdateConfiguration": true,
+        "scopes": [
+          "team"
+        ]
+      }
+    ],
+    "validDomains": [
+      "*.login.microsoftonline.com",
+      "*.sharepoint.com",
+      "*.virtualearth.net",
+      "spoprod-a.akamaihd.net",
+      "resourceseng.blob.core.windows.net"
+    ],
+    "webApplicationInfo": {
+      "resource": "https://{teamSiteDomain}",
+      "id": "00000003-0000-0ff1-ce00-000000000000"
+    }
+  }

@@ -5,5 +5,10 @@ export interface IBingMapsServiceProps {
 }
 
 export interface IBingMapsService {
-    geoCode(address: string) : Promise<IPushpin | string>;
+    geoCode(
+        countryRegion: string,
+        adminDistrict: string,
+        locality: string,
+        address: string
+    ): Promise<{ latitude: number, longitude: number } | string>;
 }

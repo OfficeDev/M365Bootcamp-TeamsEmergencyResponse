@@ -1,5 +1,5 @@
 import { IBingMapsService, IBingMapsServiceProps } from './IBingMapsService';
-import IPushpin from '../../model/IPushpin';
+import IGetLocationsResponse from './WebServicePayloads/IGetLocationsResponse';
 
 export default class BingMapsService implements IBingMapsService {
 
@@ -8,14 +8,33 @@ export default class BingMapsService implements IBingMapsService {
         this.credentials = props.credentials;
     }
 
-    public async geoCode (address: string) : Promise<IPushpin | string> {
-        return ({
-            pushpinNumber: 1,
-            title: 'Statue of Liberty',
-            subtitle: 'National Monument',
-            address: 'Statue of Liberty',
-            latitude: 40.6892,
-            longitude: -74.0445
-        })
+    public async geoCode(countryRegion: string,
+        adminDistrict: string,
+        locality: string,
+        address: string
+    ): Promise<{latitude: number, longitude: number} | string> {
+
+        const url = `https://dev.virtualearth.net/REST/v1/Locations?countryRegion=${countryRegion}&adminDistrict=${adminDistrict}&locality=${locality}&postalCode=-&addressLine=${address}&maxResults=1&key=${this.credentials}`;
+
+        try {
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: { "accept": "application/json" },
+                mode: 'cors',
+                cache: 'default'
+            });
+    
+            if (response.ok) {
+                const value: IGetLocationsResponse = await response.json();
+                const coordinates = value.resourceSets[0].resources[0].point.coordinates;
+                return ({
+                    latitude: coordinates[0],
+                    longitude: coordinates[1]
+                })
+            }    
+        }
+        catch (error) {
+            return error;
+        }
     }
 }

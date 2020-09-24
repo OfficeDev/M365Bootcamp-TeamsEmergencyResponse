@@ -16,7 +16,10 @@ export default class MapDataService implements IMapDataService {
             this.serviceProps.siteId, listId, new PushpinMapper()
         );
 
-        const test = await this.serviceProps.bingMapsService.geoCode("Microsoft Building 36, Redmond, WA");
+        // const test = await this.serviceProps.bingMapsService.geoCode(
+        //     "USA", "Washington", "Redmond", "Microsoft Building 36"
+        // )
+
         return (points);
 
     }
