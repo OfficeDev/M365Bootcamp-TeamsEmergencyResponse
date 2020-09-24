@@ -21,6 +21,7 @@ export default class MapDataServiceMock implements IMapDataService {
                 pushpinNumber: 1,
                 title: 'Statue of Liberty',
                 subtitle: 'National Monument',
+                address: 'Statue of Liberty',
                 latitude: 40.6892,
                 longitude: -74.0445
             },
@@ -28,6 +29,7 @@ export default class MapDataServiceMock implements IMapDataService {
                 pushpinNumber: 2,
                 title: 'Empire State Building',
                 subtitle: 'Deco skyscraper',
+                address: '20 W 34th St, New York, NY 10001',
                 latitude: 40.7484,
                 longitude: -73.9857
             },
@@ -35,19 +37,9 @@ export default class MapDataServiceMock implements IMapDataService {
                 pushpinNumber: 3,
                 title: 'Bryant Park',
                 subtitle: '9 acre park in Manhattan',
+                address: 'Bryant Park, New York, NY',
                 latitude: 40.7536,
                 longitude: -73.9832
-            },
-            // {
-            //     pushpinNumber: 4,
-            //     title: 'Seattle',
-            //     subtitle: 'Test',
-            //     latitude: 47.6062,
-            //     longitude: -122.3321
-            // }
-
+            }
         ];
-
-
-
 }
