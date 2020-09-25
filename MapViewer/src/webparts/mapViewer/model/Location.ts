@@ -2,7 +2,7 @@ import IFieldMapper, { IFieldValues } from './IFieldMapper';
 
 // Model class that describes a location on the map
 export default interface ILocation {
-    pushpinNumber: number;
+    id: number;
     title: string;
     subtitle: string;
     address: string;
@@ -16,9 +16,9 @@ export default interface ILocation {
 // Field value set for a location in SharePoint
 interface IListItem extends IFieldValues {
     fields: {
+        id: number;
         Title: string;
         Subtitle: string;
-        Pushpin: number;
         Address: string;
         City: string;
         StateProvince: string;
@@ -32,14 +32,14 @@ interface IListItem extends IFieldValues {
 export class LocationMapper implements IFieldMapper {
 
     public getFieldNames(): string {
-        return ('Title,Subtitle,Pushpin,Address,City,StateProvince,Country,latitude,longitude');
+        return ('id,Title,Subtitle,Address,City,StateProvince,Country,latitude,longitude');
     }
 
     // Convert field value set to model object
     public getValuesFromFields(listItems: IListItem[]): ILocation[] {
 
         var result = listItems.map(i => ({
-            pushpinNumber: i.fields.Pushpin,
+            id: i.fields.id,
             title: i.fields.Title,
             subtitle: i.fields.Subtitle,
             address: i.fields.Address,
@@ -55,7 +55,6 @@ export class LocationMapper implements IFieldMapper {
     // Convert updated properties of model object to field value set
     public setFields(item: any): IListItem {
         let values: any = {};
-        if (item.pushpinNumber !== undefined) values.Pushpin = item.pushpinNumber;
         if (item.title !== undefined) values.Title = item.title;
         if (item.subtitle !== undefined) values.Subtitle = item.subtitle;
         if (item.address !== undefined) values.Address = item.address;
