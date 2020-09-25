@@ -75,18 +75,18 @@ export default class MapViewer extends React.Component<IMapViewerProps, IMapView
               )}
             />
           </div>
-          <MessagePanel 
-            mapDataService={this.props.mapDataService} 
+          <MessagePanel
+            mapDataService={this.props.mapDataService}
             message=""
             refresh={() => {
               this.props.mapDataService.getMapPoints(true)
-              .then((points: Location[]) => {
-                this.setState({
-                  dataLoaded: true,
-                  points: points
+                .then((points: Location[]) => {
+                  this.setState({
+                    dataLoaded: true,
+                    points: points
+                  });
                 });
-              });
-            }} 
+            }}
           />
         </div>
       );
@@ -94,24 +94,30 @@ export default class MapViewer extends React.Component<IMapViewerProps, IMapView
   }
 
   private getCenter(points: Location[]): number[] {
-    
-    let pointCount = 0;
 
-    if (points.length === 0) {
-      return [];
-    } else {
-      // Compute the centroid
-      let sumX = 0;
-      let sumY = 0;
-      for (let p of points) {
-        if (p.latitude && p.longitude) {
-          sumX += p.latitude;
-          sumY += p.longitude;
-          pointCount++;
-        }
+    var result = [0, 0];
+    var foundOne = false;
+
+    // Calculate the corners of a rectangle around all the points
+    let minX: number;
+    let maxX: number;
+    let minY: number;
+    let maxY: number;
+    for (let p of points) {
+      if (p.latitude && p.longitude) {
+        foundOne = true;
+        minX = minX ? Math.min(minX, p.latitude) : p.latitude;
+        maxX = maxX ? Math.max(maxX, p.latitude) : p.latitude;
+        minY = minY ? Math.min(minY, p.longitude) : p.longitude;
+        maxY = maxY ? Math.max(maxY, p.longitude) : p.longitude;
       }
-      return [sumX / pointCount, sumY / pointCount];
+
+      // The center of the rectangle will be the center of the map
+      if (foundOne) {
+        result = [(minX + maxX) / 2, (minY + maxY) / 2];
+      }
     }
+    return result;
   }
 
 
