@@ -1,0 +1,27 @@
+@import '~office-ui-fabric-react/dist/sass/References.scss';
+
+.mapViewer {
+  font-family: Arial, Helvetica, sans-serif;
+
+  .mapContainer {
+    width: 100vw;
+    height: 90vh;
+  }
+
+  .panel {
+    width: 100%;
+    margin-top: 3pt;
+
+    .button {
+      vertical-align: middle;
+      color: white;
+      background-color: #6264a7;       // Official Teams color
+    }
+
+    .message {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 3pt;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "map-viewer-client-side-solution",
+    "id": "3f215ef6-ff06-4858-9195-a3eb4b3e1f20",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Sites.ReadWrite.All"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Sites.Manage.All"
+      }
+    ],
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "Bob German",
+      "websiteUrl": "https://bob1german.com",
+      "privacyUrl": "https://privacy.microsoft.com",
+      "termsOfUseUrl": "https://opensource.microsoft.com/",
+      "mpnId": ""
+    }
+  },
+  "paths": {
+    "zippedPackage": "solution/map-viewer.sppkg"
+  }
+}
