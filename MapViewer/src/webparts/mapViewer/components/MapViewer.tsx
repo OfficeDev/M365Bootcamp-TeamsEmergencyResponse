@@ -15,6 +15,7 @@ export interface IMapViewerProps {
 export interface IMapViewerState {
   dataLoaded: boolean;
   points: Location[];
+  message: string;
 }
 
 export default class MapViewer extends React.Component<IMapViewerProps, IMapViewerState> {
@@ -26,10 +27,12 @@ export default class MapViewer extends React.Component<IMapViewerProps, IMapView
     this.state = {
       dataLoaded: false,
       points: [],
+      message: ""
     };
   }
 
   public componentDidMount() {
+    // Initial data load
     this.props.mapDataService.getMapPoints(false)
       .then((points: Location[]) => {
         this.setState({
@@ -67,6 +70,12 @@ export default class MapViewer extends React.Component<IMapViewerProps, IMapView
               center={this.getCenter(this.state.points)}
               zoom={this.props.zoom}
               mapTypeId={this.props.mapType}
+              pushPins={this.state.points.map(
+                p => ({
+                  "location": [p.latitude, p.longitude],
+                  "option": { color: 'red' }
+                })
+              )}
               infoboxes={this.state.points.map(
                 p => ({
                   "location": [p.latitude, p.longitude],
@@ -77,13 +86,18 @@ export default class MapViewer extends React.Component<IMapViewerProps, IMapView
           </div>
           <MessagePanel
             mapDataService={this.props.mapDataService}
-            message=""
+            message={this.state.message}
             refresh={() => {
+              // Data load after editing list
+              this.setState({
+                message: "Updating"
+              })
               this.props.mapDataService.getMapPoints(true)
                 .then((points: Location[]) => {
                   this.setState({
                     dataLoaded: true,
-                    points: points
+                    points: points,
+                    message: ""
                   });
                 });
             }}

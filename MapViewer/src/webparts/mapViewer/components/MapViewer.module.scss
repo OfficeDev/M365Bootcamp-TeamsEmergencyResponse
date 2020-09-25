@@ -12,16 +12,23 @@
     width: 100%;
     margin-top: 3pt;
 
-    .button {
+    .editButton {
       vertical-align: middle;
       color: white;
       background-color: #6264a7;       // Official Teams color
     }
 
+    .refreshButton {
+      margin-left: 6pt;
+      vertical-align: middle;
+      color: white;
+      background-color: gray;
+    }
+
     .message {
       display: inline-block;
       vertical-align: middle;
-      margin-left: 3pt;
+      margin-left: 6pt;
     }
   }
 }
