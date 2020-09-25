@@ -12,20 +12,34 @@ export default class MapDataService implements IMapDataService {
             this.serviceProps.siteId, Constants.LIST_NAME
         );
 
+        const locationMapper = new LocationMapper();
+
         const points = await this.serviceProps.spGraphService.getListItems<ILocation>(
-            this.serviceProps.siteId, listId, new LocationMapper()
+            this.serviceProps.siteId, listId, locationMapper
         );
 
         if (geocode) {
             for (let p of points) {
                 if ((!p.latitude || !p.longitude) &&
-                    p.address || p.city || p.stateProvince || p.country) {
+                      p.address || p.city || p.stateProvince || p.country) {
+                    
+                    // If here, we're missing the geo-coordinates for an item and have
+                    // address or other info. Try to geocode it.
                     let coordinates = await this.serviceProps.bingMapsService.geoCode(
                         p.country, p.stateProvince, p.city, p.address
                     );
+
                     if (typeof coordinates === 'object') {
+                        // If here, the geocode was succesful - update the item
                         p.latitude = coordinates.latitude;
                         p.longitude = coordinates.longitude;
+                        await this.serviceProps.spGraphService.updateListItem(
+                            this.serviceProps.siteId, listId, locationMapper, p.id,
+                            {
+                                latitude: p.latitude,
+                                longitude: p.longitude
+                            }
+                        );
                     }
                 }
             }

@@ -51,4 +51,27 @@ export default class GraphService implements ISPGraphService {
             });
         });
     }
+
+    // Set a list item
+    public async updateListItem(siteId: string, listId: string, mapper: IFieldMapper,
+        itemId: number, updates: any): Promise<void | string> {
+
+        return new Promise<void | string>((resolve, reject) => {
+
+            const query = this.serviceProps.graphClient
+                .api(
+                    `/sites/${siteId}/lists/${listId}/items/${itemId}`
+                );
+
+            const payload = mapper.setFields(updates);
+
+            query.patch(payload, ((error: GraphError, response: IListItemsResponse) => {
+                if (error) {
+                    reject(error);
+                } else {
+                    resolve();
+                }
+            }));
+        });
+    }
 }

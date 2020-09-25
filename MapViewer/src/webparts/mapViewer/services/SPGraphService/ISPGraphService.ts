@@ -11,5 +11,6 @@ export interface ISPGraphService {
     getListId(siteId: string, listName: string): Promise<string>;
     getListItems<T>(siteId: string, listId: string, mapper: IFieldMapper):
         Promise<T[]>;
-//    updateListItem<T>(siteId: string, listId: string, mapper: IFieldMapper, itemId: number, )
+    updateListItem<T>(siteId: string, listId: string, mapper: IFieldMapper,
+        itemId: number, updates: any): Promise<void | string>;
 }
