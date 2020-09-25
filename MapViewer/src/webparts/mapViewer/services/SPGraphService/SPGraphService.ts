@@ -1,7 +1,7 @@
 import IFieldMapper from '../../model/IFieldMapper';
 import { ISPGraphService, ISPGraphServiceProps } from './ISPGraphService';
 import IListItemsResponse from './GraphResponses/IListItemsResponse';
-import ICreateListResponse from './GraphResponses/ICreateListResponse'
+import ICreateListResponse from './GraphResponses/ICreateListResponse';
 import { GraphError } from '@microsoft/microsoft-graph-client';
 import * as MicrosoftGraph from '@microsoft/microsoft-graph-types';
 
@@ -89,7 +89,7 @@ export default class GraphService implements ISPGraphService {
             const payload = {
                 displayName: listName,
                 columns: mapper.getColumnDefinitions()
-            }
+            };
 
             query.post(payload, ((error: GraphError, response: ICreateListResponse) => {
                 if (error) {

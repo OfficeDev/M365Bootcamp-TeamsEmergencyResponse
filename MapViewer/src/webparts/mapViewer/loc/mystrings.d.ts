@@ -6,6 +6,8 @@ declare interface IMapViewerWebPartStrings {
   MapTypeFieldLabel: string;
   SPGroupName: string;
   ListNameFieldLabel: string;
+  AerialMapType: string;
+  RoadMapType: string;
 }
 
 declare module 'MapViewerWebPartStrings' {

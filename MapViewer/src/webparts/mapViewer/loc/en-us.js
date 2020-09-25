@@ -6,6 +6,8 @@ define([], function() {
     "ZoomFieldLabel": "Zoom level (1-19)",
     "MapTypeFieldLabel": "Map type",
     "SPGroupName": "SharePoint",
-    "ListNameFieldLabel": "List name"
+    "ListNameFieldLabel": "List name",
+    "AerialMapType": "Aerial",
+    "RoadMapType": "Road"
   }
 });

@@ -3,7 +3,8 @@ import * as ReactDom from 'react-dom';
 import { Version, Environment } from '@microsoft/sp-core-library';
 import {
   IPropertyPaneConfiguration,
-  PropertyPaneTextField
+  PropertyPaneTextField,
+  PropertyPaneDropdown
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 
@@ -59,6 +60,11 @@ export default class MapViewerWebPart extends BaseClientSideWebPart<IMapViewerWe
   }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
+
+    let zoomOptions = [];
+    for (let i=1; i<=19; i++) {
+      zoomOptions.push({ key: i.toString(), text: i.toString() });
+    }
     return {
       pages: [
         {
@@ -72,11 +78,16 @@ export default class MapViewerWebPart extends BaseClientSideWebPart<IMapViewerWe
                 PropertyPaneTextField('credentials', {
                   label: strings.CredentialsFieldLabel
                 }),
-                PropertyPaneTextField('zoom', {
-                  label: strings.ZoomFieldLabel
+                PropertyPaneDropdown('zoom', {
+                  label: strings.ZoomFieldLabel,
+                  options: zoomOptions
                 }),
-                PropertyPaneTextField('mapType', {
-                  label: strings.MapTypeFieldLabel
+                PropertyPaneDropdown('mapType', {
+                  label: strings.MapTypeFieldLabel,
+                  options: [
+                    { key: 'aerial', text: strings.AerialMapType },
+                    { key: 'road', text: strings.RoadMapType }
+                  ]
                 })
               ]
             },

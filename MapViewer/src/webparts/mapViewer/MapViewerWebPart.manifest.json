@@ -23,7 +23,7 @@
     "properties": {
       "credentials": "",
       "zoom": "12",
-      "mapType": "aerial",
+      "mapType": "",
       "listName": "MapPoints"
     }
   }]

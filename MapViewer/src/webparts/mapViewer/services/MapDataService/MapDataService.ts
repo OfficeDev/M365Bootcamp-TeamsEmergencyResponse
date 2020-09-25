@@ -20,7 +20,7 @@ export default class MapDataService implements IMapDataService {
                 listId = await this.serviceProps.spGraphService.createList(
                     this.serviceProps.siteId, this.serviceProps.listName,
                     locationMapper
-                )
+                );
             } else throw(error);
         }
 

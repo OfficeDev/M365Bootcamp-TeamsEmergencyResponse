@@ -7,9 +7,9 @@ export interface IFieldValues {
 
 // JSON required by Graph API to create a list
 export interface IColumnDefinition {
-    name: string,
-    text?: object,
-    number?: object
+    name: string;
+    text?: object;
+    number?: object;
 }
 
 // A class that can be used by the Graph Service to access a specific
