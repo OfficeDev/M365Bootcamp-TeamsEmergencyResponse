@@ -99,24 +99,24 @@ export default class MapViewer extends React.Component<IMapViewerProps, IMapView
     var foundOne = false;
 
     // Calculate the corners of a rectangle around all the points
-    let minX: number;
-    let maxX: number;
-    let minY: number;
-    let maxY: number;
+    let minX: number = NaN;
+    let maxX: number = NaN;
+    let minY: number = NaN;
+    let maxY: number = NaN;
     for (let p of points) {
       if (p.latitude && p.longitude) {
         foundOne = true;
-        minX = minX ? Math.min(minX, p.latitude) : p.latitude;
-        maxX = maxX ? Math.max(maxX, p.latitude) : p.latitude;
-        minY = minY ? Math.min(minY, p.longitude) : p.longitude;
-        maxY = maxY ? Math.max(maxY, p.longitude) : p.longitude;
-      }
-
-      // The center of the rectangle will be the center of the map
-      if (foundOne) {
-        result = [(minX + maxX) / 2, (minY + maxY) / 2];
+        minX = isNaN(minX) ? p.latitude : Math.min(minX, p.latitude);
+        maxX = isNaN(maxX) ? p.latitude : Math.max(maxX, p.latitude);
+        minY = isNaN(minY) ? p.longitude : Math.min(minY, p.longitude);
+        maxY = isNaN(maxY) ? p.longitude : Math.max(maxY, p.longitude);
       }
     }
+    // The center of the rectangle will be the center of the map
+    if (foundOne) {
+      result = [(minX + maxX) / 2, (minY + maxY) / 2];
+    }
+    
     return result;
   }
 
