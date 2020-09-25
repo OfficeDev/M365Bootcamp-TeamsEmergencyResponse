@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ReactBingmaps } from 'react-bingmaps';
 import { IMapDataService } from '../services/MapDataService/IMapDataService';
-import Pushpin from '../model/Location';
+import Location from '../model/Location';
 import MessagePanel from './MessagePanel';
 import styles from './MapViewer.module.scss';
 
@@ -14,7 +14,7 @@ export interface IMapViewerProps {
 
 export interface IMapViewerState {
   dataLoaded: boolean;
-  points: Pushpin[];
+  points: Location[];
 }
 
 export default class MapViewer extends React.Component<IMapViewerProps, IMapViewerState> {
@@ -31,7 +31,7 @@ export default class MapViewer extends React.Component<IMapViewerProps, IMapView
 
   public componentDidMount() {
     this.props.mapDataService.getMapPoints(false)
-      .then((points: Pushpin[]) => {
+      .then((points: Location[]) => {
         this.setState({
           dataLoaded: true,
           points: points
@@ -67,10 +67,10 @@ export default class MapViewer extends React.Component<IMapViewerProps, IMapView
               center={this.getCenter(this.state.points)}
               zoom={this.props.zoom}
               mapTypeId={this.props.mapType}
-              pushPins={this.state.points.map(
+              infoboxes={this.state.points.map(
                 p => ({
                   "location": [p.latitude, p.longitude],
-                  "option": { color: 'red' }
+                  "option": { title: p.title, description: p.subtitle }
                 })
               )}
             />
@@ -80,7 +80,7 @@ export default class MapViewer extends React.Component<IMapViewerProps, IMapView
             message=""
             refresh={() => {
               this.props.mapDataService.getMapPoints(true)
-              .then((points: Pushpin[]) => {
+              .then((points: Location[]) => {
                 this.setState({
                   dataLoaded: true,
                   points: points
@@ -93,7 +93,7 @@ export default class MapViewer extends React.Component<IMapViewerProps, IMapView
     }
   }
 
-  private getCenter(points: Pushpin[]): number[] {
+  private getCenter(points: Location[]): number[] {
     
     let pointCount = 0;
 
