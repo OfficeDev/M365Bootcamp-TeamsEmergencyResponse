@@ -8,11 +8,11 @@ export default class MapDataService implements IMapDataService {
 
     public async getMapPoints(geocode: boolean): Promise<ILocation[]> {
 
-        const listId = await this.serviceProps.graphService.getListId(
+        const listId = await this.serviceProps.spGraphService.getListId(
             this.serviceProps.siteId, Constants.LIST_NAME
         );
 
-        const points = await this.serviceProps.graphService.getListItems<ILocation>(
+        const points = await this.serviceProps.spGraphService.getListItems<ILocation>(
             this.serviceProps.siteId, listId, new LocationMapper()
         );
 
