@@ -1,4 +1,4 @@
-import IPushpin from '../../model/IPushpin';
+import ILocation from '../../model/Location';
 
 export interface IBingMapsServiceProps {
     credentials: string;

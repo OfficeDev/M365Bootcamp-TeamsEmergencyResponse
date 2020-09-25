@@ -1,4 +1,4 @@
-import Pushpin from '../../model/IPushpin';
+import Pushpin from '../../model/Location';
 import { IGraphService } from '../GraphService/IGraphService';
 import { IBingMapsService } from '../BingMapsService/IBingMapsService';
 import { WebPartContext } from '@microsoft/sp-webpart-base';

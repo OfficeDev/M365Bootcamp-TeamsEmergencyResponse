@@ -1,4 +1,4 @@
-import Pushpin from '../../model/IPushpin';
+import Pushpin from '../../model/Location';
 import { IMapDataService } from './IMapDataService';
 
 export default class MapDataServiceMock implements IMapDataService {

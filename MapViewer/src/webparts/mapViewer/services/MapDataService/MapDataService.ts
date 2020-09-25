@@ -1,4 +1,4 @@
-import IPushpin, { PushpinMapper } from '../../model/IPushpin';
+import ILocation, { LocationMapper } from '../../model/Location';
 import { IMapDataService, IMapDataServiceProps } from './IMapDataService';
 import * as Constants from '../../Constants';
 
@@ -6,14 +6,14 @@ export default class MapDataService implements IMapDataService {
 
     constructor(private serviceProps: IMapDataServiceProps) { }
 
-    public async getMapPoints(geocode: boolean): Promise<IPushpin[]> {
+    public async getMapPoints(geocode: boolean): Promise<ILocation[]> {
 
         const listId = await this.serviceProps.graphService.getListId(
             this.serviceProps.siteId, Constants.LIST_NAME
         );
 
-        const points = await this.serviceProps.graphService.getListItems<IPushpin>(
-            this.serviceProps.siteId, listId, new PushpinMapper()
+        const points = await this.serviceProps.graphService.getListItems<ILocation>(
+            this.serviceProps.siteId, listId, new LocationMapper()
         );
 
         if (geocode) {

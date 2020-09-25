@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ReactBingmaps } from 'react-bingmaps';
 import { IMapDataService } from '../services/MapDataService/IMapDataService';
-import Pushpin from '../model/IPushpin';
+import Pushpin from '../model/Location';
 import MessagePanel from './MessagePanel';
 import styles from './MapViewer.module.scss';
 
