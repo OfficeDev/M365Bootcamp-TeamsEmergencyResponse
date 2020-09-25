@@ -1,4 +1,4 @@
-import IMapper from '../../model/IMapper';
+import IFieldMapper from '../../model/IFieldMapper';
 import { IGraphService, IGraphServiceProps } from './IGraphService';
 import IListItemsResponse from './GraphResponses/IListItemsResponse';
 import { GraphError } from '@microsoft/microsoft-graph-client';
@@ -29,7 +29,7 @@ export default class GraphService implements IGraphService {
 
     // Get list items given a site ID and list ID. The specified mapper maps list
     // items to an array of T, allowing this function to be generic
-    public async getListItems<T>(siteId: string, listId: string, mapper: IMapper):
+    public async getListItems<T>(siteId: string, listId: string, mapper: IFieldMapper):
         Promise<T[]> {
 
         return new Promise<T[]>((resolve, reject) => {
@@ -45,7 +45,7 @@ export default class GraphService implements IGraphService {
                 if (error) {
                     reject(error);
                 } else {
-                    const result = mapper.getMappedValues(response.value);
+                    const result = mapper.getValuesFromFields(response.value);
                     resolve(result);
                 }
             });
