@@ -1,4 +1,4 @@
-import IFieldMapper, { IFieldValues } from './IFieldMapper';
+import IFieldMapper, { IFieldValues, IColumnDefinition } from './IFieldMapper';
 
 // Model class that describes a location on the map
 export default interface ILocation {
@@ -33,6 +33,18 @@ export class LocationMapper implements IFieldMapper {
 
     public getFieldNames(): string {
         return ('id,Title,Subtitle,Address,City,StateProvince,Country,latitude,longitude');
+    }
+
+    public getColumnDefinitions(): IColumnDefinition[] {
+        return ([
+            { name: 'Subtitle', text: { }},
+            { name: 'Address', text: { }},
+            { name: 'City', text: { }},
+            { name: 'StateProvince', text: { }},
+            { name: 'Country', text: { }},
+            { name: 'latitude', number: { }},
+            { name: 'longitude', number: { }}
+        ]);
     }
 
     // Convert field value set to model object

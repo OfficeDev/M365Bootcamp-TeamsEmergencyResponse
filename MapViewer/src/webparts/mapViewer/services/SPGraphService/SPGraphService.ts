@@ -1,6 +1,7 @@
 import IFieldMapper from '../../model/IFieldMapper';
 import { ISPGraphService, ISPGraphServiceProps } from './ISPGraphService';
 import IListItemsResponse from './GraphResponses/IListItemsResponse';
+import ICreateListResponse from './GraphResponses/ICreateListResponse'
 import { GraphError } from '@microsoft/microsoft-graph-client';
 import * as MicrosoftGraph from '@microsoft/microsoft-graph-types';
 
@@ -65,11 +66,36 @@ export default class GraphService implements ISPGraphService {
 
             const payload = mapper.setFields(updates);
 
-            query.patch(payload, ((error: GraphError, response: IListItemsResponse) => {
+            query.patch(payload, ((error: GraphError, response: any) => {
                 if (error) {
                     reject(error);
                 } else {
                     resolve();
+                }
+            }));
+        });
+    }
+
+    public createList(siteId: string, listName: string, mapper: IFieldMapper):
+        Promise<string> {
+
+        return new Promise<string>((resolve, reject) => {
+
+            const query = this.serviceProps.graphClient
+                .api(
+                    `/sites/${siteId}/lists/`
+                );
+
+            const payload = {
+                displayName: listName,
+                columns: mapper.getColumnDefinitions()
+            }
+
+            query.post(payload, ((error: GraphError, response: ICreateListResponse) => {
+                if (error) {
+                    reject(error);
+                } else {
+                    resolve(response.id);
                 }
             }));
         });

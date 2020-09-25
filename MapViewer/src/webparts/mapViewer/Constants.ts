@@ -1,1 +1,1 @@
-export const LIST_NAME = "MapViewPoints";
+export const LIST_NAME = "Foo5"; // "MapViewPoints";

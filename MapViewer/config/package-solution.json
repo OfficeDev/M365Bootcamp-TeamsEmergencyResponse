@@ -10,6 +10,10 @@
       {
         "resource": "Microsoft Graph",
         "scope": "Sites.ReadWrite.All"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Sites.Manage.All"
       }
     ],
     "isDomainIsolated": false,
