@@ -39,7 +39,7 @@ export default class MessagePanel extends React.Component<IMessagePanelProps, {}
                 // Show it as large as Teams will allow
                 width: Number.MAX_VALUE,
                 height: Number.MAX_VALUE
-            }
+            };
             microsoftTeams.tasks.startTask(taskModuleInfo,
                 (() => { this.completeEditor(); }));
         }

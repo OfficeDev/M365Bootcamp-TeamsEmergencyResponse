@@ -30,8 +30,8 @@ export default class BingMapsService implements IBingMapsService {
                 return ({
                     latitude: coordinates[0],
                     longitude: coordinates[1]
-                })
-            }    
+                });
+            }
         }
         catch (error) {
             return error;
