@@ -16,6 +16,7 @@ export interface IMapViewerWebPartProps {
   credentials: string;
   zoom: string;
   mapType: string;
+  listName: string;
 }
 
 export default class MapViewerWebPart extends BaseClientSideWebPart<IMapViewerWebPartProps> {
@@ -26,7 +27,8 @@ export default class MapViewerWebPart extends BaseClientSideWebPart<IMapViewerWe
     this.mapDataService = await ServiceFactory.getMapDataService(
       Environment.type,
       this.context,
-      this.properties.credentials
+      this.properties.credentials,
+      this.properties.listName
     );
   }
 
@@ -77,7 +79,16 @@ export default class MapViewerWebPart extends BaseClientSideWebPart<IMapViewerWe
                   label: strings.MapTypeFieldLabel
                 })
               ]
+            },
+            {
+              groupName: strings.SPGroupName,
+              groupFields: [
+                PropertyPaneTextField('listName', {
+                  label: strings.ListNameFieldLabel
+                })
+              ]
             }
+
           ]
         }
       ]

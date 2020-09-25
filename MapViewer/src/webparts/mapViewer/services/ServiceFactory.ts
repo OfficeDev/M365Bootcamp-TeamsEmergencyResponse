@@ -13,7 +13,8 @@ export default class ServiceFactory {
     public static async getMapDataService(
         environmentType: EnvironmentType,
         context: WebPartContext,
-        bingMapsCredentials: string): Promise<IMapDataService> {
+        bingMapsCredentials: string,
+        listName: string): Promise<IMapDataService> {
 
         if (environmentType === EnvironmentType.Local) {
 
@@ -46,7 +47,8 @@ export default class ServiceFactory {
                 spGraphService: graphService,
                 bingMapsService: bingMapsService,
                 context: context,
-                siteId: siteId
+                siteId: siteId,
+                listName: listName
             });
         }
     }

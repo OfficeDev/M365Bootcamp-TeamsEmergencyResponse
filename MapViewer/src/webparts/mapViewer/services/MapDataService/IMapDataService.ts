@@ -9,6 +9,7 @@ export interface IMapDataServiceProps {
     bingMapsService: IBingMapsService;
     context: WebPartContext;
     siteId: string;
+    listName: string;
 }
 
 // Public members 

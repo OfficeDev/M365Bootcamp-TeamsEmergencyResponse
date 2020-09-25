@@ -1,6 +1,5 @@
 import ILocation, { LocationMapper } from '../../model/Location';
 import { IMapDataService, IMapDataServiceProps } from './IMapDataService';
-import * as Constants from '../../Constants';
 
 export default class MapDataService implements IMapDataService {
 
@@ -13,13 +12,13 @@ export default class MapDataService implements IMapDataService {
         let listId: string;
         try {
             listId = await this.serviceProps.spGraphService.getListId(
-                this.serviceProps.siteId, Constants.LIST_NAME
+                this.serviceProps.siteId, this.serviceProps.listName
             );    
         }
         catch (error) {
             if (error.statusCode === 404) {
                 listId = await this.serviceProps.spGraphService.createList(
-                    this.serviceProps.siteId, Constants.LIST_NAME,
+                    this.serviceProps.siteId, this.serviceProps.listName,
                     locationMapper
                 )
             } else throw(error);
@@ -63,7 +62,7 @@ export default class MapDataService implements IMapDataService {
     public getEditUrl() {
 
         const webUrl = this.serviceProps.context.pageContext.web.absoluteUrl;
-        return `${webUrl}/Lists/${Constants.LIST_NAME}/AllItems.aspx`;
+        return `${webUrl}/Lists/${this.serviceProps.listName}/AllItems.aspx`;
 
     }
 

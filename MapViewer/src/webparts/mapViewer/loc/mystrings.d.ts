@@ -4,6 +4,8 @@ declare interface IMapViewerWebPartStrings {
   CredentialsFieldLabel: string;
   ZoomFieldLabel: string;
   MapTypeFieldLabel: string;
+  SPGroupName: string;
+  ListNameFieldLabel: string;
 }
 
 declare module 'MapViewerWebPartStrings' {
