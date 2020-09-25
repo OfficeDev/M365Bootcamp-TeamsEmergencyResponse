@@ -11,4 +11,5 @@ export interface IGraphService {
     getListId(siteId: string, listName: string): Promise<string>;
     getListItems<T>(siteId: string, listId: string, mapper: IFieldMapper):
         Promise<T[]>;
+//    updateListItem<T>(siteId: string, listId: string, mapper: IFieldMapper, itemId: number, )
 }

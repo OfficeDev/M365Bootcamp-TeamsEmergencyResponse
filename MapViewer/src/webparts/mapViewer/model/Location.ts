@@ -1,6 +1,6 @@
-import IFieldMapper from './IFieldMapper';
+import IFieldMapper, { IFieldValues } from './IFieldMapper';
 
-// Model class that describes a pushpin on the map
+// Model class that describes a location on the map
 export default interface ILocation {
     pushpinNumber: number;
     title: string;
@@ -13,8 +13,8 @@ export default interface ILocation {
     longitude: number;
 }
 
-// SharePoint list item details used in mapping
-interface IListItem {
+// Field value set for a location in SharePoint
+interface IListItem extends IFieldValues {
     fields: {
         Title: string;
         Subtitle: string;
@@ -28,14 +28,14 @@ interface IListItem {
     };
 }
 
-// Class to obtain the SharePoint field names (for select) and 
-// to map SharePoint list items to model items
+// Class used by Graph Service to hide list details from the Graph code
 export class LocationMapper implements IFieldMapper {
 
     public getFieldNames(): string {
         return ('Title,Subtitle,Pushpin,Address,City,StateProvince,Country,latitude,longitude');
     }
 
+    // Convert field value set to model object
     public getValuesFromFields(listItems: IListItem[]): ILocation[] {
 
         var result = listItems.map(i => ({
@@ -50,6 +50,21 @@ export class LocationMapper implements IFieldMapper {
             longitude: i.fields.longitude
         }));
         return result;
+    }
+
+    // Convert updated properties of model object to field value set
+    public setFields(item: any): IListItem {
+        let values: any = {};
+        if (item.pushpinNumber !== undefined) values.Pushpin = item.pushpinNumber;
+        if (item.title !== undefined) values.Title = item.title;
+        if (item.subtitle !== undefined) values.Subtitle = item.subtitle;
+        if (item.address !== undefined) values.Address = item.address;
+        if (item.city !== undefined) values.City = item.city;
+        if (item.stateProvince !== undefined) values.StateProvince = item.stateProvince;
+        if (item.country !== undefined) values.Country = item.country;
+        if (item.latitude !== undefined) values.latitude = item.latitude;
+        if (item.longitude !== undefined) values.longitude = item.longitude;
+        return { fields: values };
     }
 }
 
