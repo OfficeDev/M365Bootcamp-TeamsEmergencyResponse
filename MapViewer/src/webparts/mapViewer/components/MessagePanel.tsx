@@ -2,7 +2,6 @@ import * as React from 'react';
 import styles from './MapViewer.module.scss';
 import { IMapDataService } from '../services/MapDataService/IMapDataService';
 import { PrimaryButton } from 'office-ui-fabric-react/lib/Button';
-import { IMicrosoftTeams } from '@microsoft/sp-webpart-base';
 import * as microsoftTeams from "@microsoft/teams-js";
 
 export interface IMessagePanelProps {
