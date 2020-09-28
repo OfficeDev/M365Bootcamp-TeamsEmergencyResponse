@@ -91,7 +91,7 @@ export default class MapViewer extends React.Component<IMapViewerProps, IMapView
               // Data load after editing list
               this.setState({
                 message: "Updating"
-              })
+              });
               this.props.mapDataService.getMapPoints(true)
                 .then((points: Location[]) => {
                   this.setState({
