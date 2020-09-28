@@ -14,6 +14,10 @@
       {
         "resource": "Microsoft Graph",
         "scope": "Sites.Manage.All"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "ChannelMessage.Send"
       }
     ],
     "isDomainIsolated": false,

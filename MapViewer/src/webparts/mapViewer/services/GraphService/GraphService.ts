@@ -4,6 +4,7 @@ import IListItemsResponse from './GraphResponses/IListItemsResponse';
 import ICreateListResponse from './GraphResponses/ICreateListResponse';
 import { GraphError } from '@microsoft/microsoft-graph-client';
 import * as MicrosoftGraph from '@microsoft/microsoft-graph-types';
+import * as microsoftTeams from "@microsoft/teams-js";
 
 export default class GraphService implements IGraphService {
 
@@ -99,5 +100,43 @@ export default class GraphService implements IGraphService {
                 }
             }));
         });
+    }
+
+    private async getTeamsContext(): Promise<any> {
+
+        return new Promise<any>((resolve, reject) => {
+            if (microsoftTeams) {
+                microsoftTeams.getContext((context) => {
+                    resolve(context)
+                });
+            } else {
+                reject ("Error: Teams context not found");
+            }    
+        })
+    }
+
+    public async sendToChannel(message: string): Promise<void | string> {
+
+        const teamsContext = await this.getTeamsContext();
+        const teamId = teamsContext.groupId;
+        const channelId = teamsContext.channelId;
+
+        return new Promise<void>((resolve, reject) => {
+            this.serviceProps.graphClient.api(
+                `/teams/${teamId}/channels/${channelId}/messages`)
+                .post({
+                    body: {
+                        content: message,
+                        contentType: "text"
+                    }
+                }, ((err, res) => {
+                    if (!err) {
+                        resolve();
+                    } else {
+                        reject(err);
+                    }
+                }));
+        });
+
     }
 }
