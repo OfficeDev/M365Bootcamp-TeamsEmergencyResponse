@@ -107,12 +107,12 @@ export default class GraphService implements IGraphService {
         return new Promise<any>((resolve, reject) => {
             if (microsoftTeams) {
                 microsoftTeams.getContext((context) => {
-                    resolve(context)
+                    resolve(context);
                 });
             } else {
                 reject ("Error: Teams context not found");
             }    
-        })
+        });
     }
 
     public async sendToChannel(message: string): Promise<void | string> {
@@ -121,7 +121,7 @@ export default class GraphService implements IGraphService {
         const teamId = teamsContext.groupId;
         const channelId = teamsContext.channelId;
 
-        return new Promise<void>((resolve, reject) => {
+        return new Promise<void | string>((resolve, reject) => {
             this.serviceProps.graphClient.api(
                 `/teams/${teamId}/channels/${channelId}/messages`)
                 .post({
