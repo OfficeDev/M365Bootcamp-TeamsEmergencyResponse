@@ -2,12 +2,12 @@ import { MSGraphClient } from '@microsoft/sp-http';
 import IFieldMapper from '../../model/IFieldMapper';
 
 // Passed to service in the constructor
-export interface ISPGraphServiceProps {
+export interface IGraphServiceProps {
     graphClient: MSGraphClient;
 }
 
 // Public members
-export interface ISPGraphService {
+export interface IGraphService {
     getListId(siteId: string, listName: string): Promise<string>;
     getListItems<T>(siteId: string, listId: string, mapper: IFieldMapper):
         Promise<T[]>;

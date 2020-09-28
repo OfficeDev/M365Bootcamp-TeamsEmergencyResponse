@@ -11,27 +11,27 @@ export default class MapDataService implements IMapDataService {
 
         let listId: string;
         try {
-            listId = await this.serviceProps.spGraphService.getListId(
+            listId = await this.serviceProps.graphService.getListId(
                 this.serviceProps.siteId, this.serviceProps.listName
             );    
         }
         catch (error) {
             if (error.statusCode === 404) {
-                listId = await this.serviceProps.spGraphService.createList(
+                listId = await this.serviceProps.graphService.createList(
                     this.serviceProps.siteId, this.serviceProps.listName,
                     locationMapper
                 );
             } else throw(error);
         }
 
-        const points = await this.serviceProps.spGraphService.getListItems<ILocation>(
+        const points = await this.serviceProps.graphService.getListItems<ILocation>(
             this.serviceProps.siteId, listId, locationMapper
         );
 
         if (geocode) {
             for (let p of points) {
                 if ((!p.latitude || !p.longitude) &&
-                      p.address || p.city || p.stateProvince || p.country) {
+                      (p.address || p.city || p.stateProvince || p.country)) {
                     
                     // If here, we're missing the geo-coordinates for an item and have
                     // address or other info. Try to geocode it.
@@ -43,7 +43,7 @@ export default class MapDataService implements IMapDataService {
                         // If here, the geocode was succesful - update the item
                         p.latitude = coordinates.latitude;
                         p.longitude = coordinates.longitude;
-                        await this.serviceProps.spGraphService.updateListItem(
+                        await this.serviceProps.graphService.updateListItem(
                             this.serviceProps.siteId, listId, locationMapper, p.id,
                             {
                                 latitude: p.latitude,

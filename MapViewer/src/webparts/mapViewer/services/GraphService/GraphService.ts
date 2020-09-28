@@ -1,13 +1,13 @@
 import IFieldMapper from '../../model/IFieldMapper';
-import { ISPGraphService, ISPGraphServiceProps } from './ISPGraphService';
+import { IGraphService, IGraphServiceProps } from './IGraphService';
 import IListItemsResponse from './GraphResponses/IListItemsResponse';
 import ICreateListResponse from './GraphResponses/ICreateListResponse';
 import { GraphError } from '@microsoft/microsoft-graph-client';
 import * as MicrosoftGraph from '@microsoft/microsoft-graph-types';
 
-export default class GraphService implements ISPGraphService {
+export default class GraphService implements IGraphService {
 
-    constructor(private serviceProps: ISPGraphServiceProps) { }
+    constructor(private serviceProps: IGraphServiceProps) { }
 
     // Get a list ID given a site ID and list name
     public async getListId(siteId: string, listName: string): Promise<string> {
