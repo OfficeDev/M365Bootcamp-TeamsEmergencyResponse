@@ -11,20 +11,20 @@ export default class MapDataService implements IMapDataService {
 
         let listId: string;
         try {
-            listId = await this.serviceProps.spGraphService.getListId(
+            listId = await this.serviceProps.graphService.getListId(
                 this.serviceProps.siteId, this.serviceProps.listName
             );    
         }
         catch (error) {
             if (error.statusCode === 404) {
-                listId = await this.serviceProps.spGraphService.createList(
+                listId = await this.serviceProps.graphService.createList(
                     this.serviceProps.siteId, this.serviceProps.listName,
                     locationMapper
                 );
             } else throw(error);
         }
 
-        const points = await this.serviceProps.spGraphService.getListItems<ILocation>(
+        const points = await this.serviceProps.graphService.getListItems<ILocation>(
             this.serviceProps.siteId, listId, locationMapper
         );
 
@@ -43,7 +43,7 @@ export default class MapDataService implements IMapDataService {
                         // If here, the geocode was succesful - update the item
                         p.latitude = coordinates.latitude;
                         p.longitude = coordinates.longitude;
-                        await this.serviceProps.spGraphService.updateListItem(
+                        await this.serviceProps.graphService.updateListItem(
                             this.serviceProps.siteId, listId, locationMapper, p.id,
                             {
                                 latitude: p.latitude,

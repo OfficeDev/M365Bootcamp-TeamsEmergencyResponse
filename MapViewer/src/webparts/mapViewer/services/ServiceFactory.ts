@@ -5,7 +5,7 @@ import { IMapDataService } from './MapDataService/IMapDataService';
 import MapDataService from './MapDataService/MapDataService';
 import MapDataServiceMock from './MapDataService/MapDataServiceMock';
 
-import SPGraphService from './SPGraphService/SPGraphService';
+import GraphService from './GraphService/GraphService';
 import BingMapsService from './BingMapsService/BingMapsService';
 
 export default class ServiceFactory {
@@ -30,7 +30,7 @@ export default class ServiceFactory {
             const graphClient = await context.msGraphClientFactory
                 .getClient();
             // 2. New up our Graph service (used to call the Graph) and pass in the client
-            const graphService = new SPGraphService({
+            const graphService = new GraphService({
                 graphClient: graphClient
             });
             // 3. Get the current SP site ID (in Teams this is the underlying SP site)
@@ -44,7 +44,7 @@ export default class ServiceFactory {
 
             // New up the Map Data Service, passing its dependencies
             return new MapDataService({
-                spGraphService: graphService,
+                graphService: graphService,
                 bingMapsService: bingMapsService,
                 context: context,
                 siteId: siteId,
