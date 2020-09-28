@@ -31,7 +31,7 @@ export default class MapDataService implements IMapDataService {
         if (geocode) {
             for (let p of points) {
                 if ((!p.latitude || !p.longitude) &&
-                      p.address || p.city || p.stateProvince || p.country) {
+                      (p.address || p.city || p.stateProvince || p.country)) {
                     
                     // If here, we're missing the geo-coordinates for an item and have
                     // address or other info. Try to geocode it.
