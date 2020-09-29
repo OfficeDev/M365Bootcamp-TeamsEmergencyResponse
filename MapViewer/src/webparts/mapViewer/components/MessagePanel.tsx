@@ -22,9 +22,13 @@ export default class MessagePanel extends React.Component<IMessagePanelProps, {}
     public render(): React.ReactElement<IMessagePanelProps> {
         return (
             <div className={styles.panel}>
-                <PrimaryButton className={styles.button} onClick={this.launchEditor.bind(this)}>
+                <PrimaryButton className={styles.editButton} onClick={this.launchEditor.bind(this)}>
                     Edit pushpins
                 </PrimaryButton>
+                <PrimaryButton className={styles.refreshButton} onClick={this.refresh.bind(this)}>
+                    Refresh
+                </PrimaryButton>
+
                 <span className={styles.message}>{this.props.message}</span>
             </div>
         );
@@ -41,11 +45,11 @@ export default class MessagePanel extends React.Component<IMessagePanelProps, {}
                 height: Number.MAX_VALUE
             };
             microsoftTeams.tasks.startTask(taskModuleInfo,
-                (() => { this.completeEditor(); }));
+                (() => { this.refresh(); }));
         }
     }
 
-    private completeEditor() {
+    private refresh() {
         this.props.refresh();
     }
 

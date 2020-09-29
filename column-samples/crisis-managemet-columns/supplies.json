@@ -1,0 +1,64 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/column-formatting.schema.json",
+    "elmType": "div",
+    "style": {
+      "font-size": "16px"
+    },
+    "children": [
+      {
+        "elmType": "span",
+        "attributes": {
+          "title": "Water",
+          "iconName": "Precipitation",
+          "class": "='ms-fontColor-' + if(indexOf(join(@currentField,''),'Water') != -1, 'themeDark', 'neutral')"
+        },
+        "style": {
+          "padding": "0 2px"
+        }
+      },
+      {
+        "elmType": "span",
+        "attributes": {
+          "title": "Food",
+          "iconName": "EatDrink",
+          "class": "='ms-fontColor-' + if(indexOf(join(@currentField,''),'Food') != -1, 'themeDark', 'neutral')"
+        },
+        "style": {
+          "padding": "0 2px 0 0"
+        }
+      },
+      {
+        "elmType": "span",
+        "attributes": {
+          "title": "Dog",
+          "iconName": "Fangbody",
+          "class": "='ms-fontColor-' + if(indexOf(join(@currentField,''),'Pet supplies') != -1, 'themeDark', 'neutral')"
+        },
+        "style": {
+          "padding": "0 2px"
+        }
+      },
+      {
+        "elmType": "span",
+        "attributes": {
+          "title": "Medical",
+          "iconName": "Medical",
+          "class": "='ms-fontColor-' + if(indexOf(join(@currentField,''),'Medicine') != -1, 'themeDark', 'neutralLight')"
+        },
+        "style": {
+          "padding": "0 2px"
+        }
+      },
+      {
+        "elmType": "span",
+        "attributes": {
+          "title": "Flashlight",
+          "iconName": "Flashlight",
+          "class": "='ms-fontColor-' + if(indexOf(join(@currentField,''),'Flashlight') != -1, 'themeDark', 'neutral')"
+        },
+        "style": {
+          "padding": "0 2px"
+        }
+      }
+    ]
+  }
