@@ -72,4 +72,28 @@ This one can take up to 20 minutes to take effect, so again we want to get it do
 
  NOTE: The app catalog still won't work right away; you'll get errors if you try to upload an app right now. You might want to note the time; it can take up to 20 minutes. Meanwhile, you can proceed to the next part of the exercise; Part 2 does not require either the Teams upload or the SharePoint app catalog.
 
+ ## Step 4: Create the Team
+
+ a. Browse to [https://teams.microsoft.com](https://teams.microsoft.com) log in if you're prompted. These exercises assume you're using the web client, so click "Use the web client instead".
+
+ ![Teams](images/Part1-Teams1.png)
+
+ b. Click "Join or create a team" to create your team (1); then click the "Create Team" button (2).
+
+ ![Teams](images/Part1-Teams2.png)
+
+ c. Click "Build a team from scratch"
+
+ ![Teams](images/Part1-Teams3.png)
+
+ d. Click "Private" so people not on the emergency response team can't join without permission.
+
+ ![Teams](images/Part1-Teams4.png)
+
+ e. Name your Team "Emergency Response" (1) and click "Create" (2).
+
+  ![Teams](images/Part1-Teams5.png)
+
+ You can skip adding members to the Team because there probably isn't anyone to add in your new tenant!
+
  [Next section is here](Documents/Part2.md)
