@@ -25,6 +25,7 @@ This repository contains the entire workshop, including presentation material an
  * [Part 4: SharePoint Framework tabs](Documents/Part4.md)
  * [Part 5: Calling the Microsoft Graph](Documents/Part5.md)
  * [Resources](Documents/Resources.md)
+ * [other](abc)
  
 ## Contributing
 
