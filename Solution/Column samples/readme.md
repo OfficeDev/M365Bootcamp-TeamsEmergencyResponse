@@ -12,7 +12,7 @@ Contact| People
 Supplies| Choice [ Choices - Food Water Flashlight Pet supplies Medicine ]
 Comments| Multi-text
 
-![screenshot of the sample](../images/i-need-list.png)
+![screenshot of the sample](../../Labs/images/i-need-list.png)
 
 
 > Tip - For location type columns you cannot format columns in the list view, instead go to column settings of the location field and paste the json.

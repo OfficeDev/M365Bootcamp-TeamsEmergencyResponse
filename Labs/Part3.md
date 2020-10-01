@@ -8,6 +8,12 @@
  * [Challenges: Ideas for going beyond the lab exercises](Challenges.md)
  * [Resources](Resources.md)
 
+In this exercise you'll create a Teams application for managing inventory needs during an emergency. The app will be implemented as a SharePoint list, and published as a Teams tab.
+
+## Step 1: Create the SharePoint list
+
+
+
 
 
 
