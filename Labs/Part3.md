@@ -42,10 +42,10 @@ g. Under column formatting, paste in the JSON 1️⃣ from the [location.json](.
 
 h. Repeat the process for additional columns as follows:
 
+| Column name | Column type | Formatting JSON |
 |---|---|---|
 | Contact | People | [contact.json](../Solution/Column%20samples/contact.json) |
-| Supplies | Choice of: Food, Water, Flashlight, Pet supplies,
-Medicine (spelling and upper/lower case must match exactly for formatting to work) | [supplies.json](../Solution/Column%20samples/supplies.json) |
+| Supplies | Choice of: Food, Water, Flashlight, Pet supplies, Medicine (spelling and upper/lower case must match exactly for formatting to work) | [supplies.json](../Solution/Column%20samples/supplies.json) |
 | Comments | Multi-line text | none |
 
 Note that for some of the columns you'll need to click "Advanced mode" to get to the JSON.
