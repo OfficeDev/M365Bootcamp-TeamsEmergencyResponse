@@ -10,7 +10,7 @@
         "attributes": {
           "title": "Water",
           "iconName": "Precipitation",
-          "class": "='ms-fontColor-' + if(indexOf(join(@currentField,''),'Water') != -1, 'themeDark', 'neutral')"
+          "class": "='ms-fontColor-' + if(indexOf(join(@currentField,''),'Water') != -1, 'blue', 'themeLighterAlt')"
         },
         "style": {
           "padding": "0 2px"
@@ -21,7 +21,7 @@
         "attributes": {
           "title": "Food",
           "iconName": "EatDrink",
-          "class": "='ms-fontColor-' + if(indexOf(join(@currentField,''),'Food') != -1, 'themeDark', 'neutral')"
+          "class": "='ms-fontColor-' + if(indexOf(join(@currentField,''),'Food') != -1, 'green', 'themeLighterAlt')"
         },
         "style": {
           "padding": "0 2px 0 0"
@@ -32,7 +32,7 @@
         "attributes": {
           "title": "Dog",
           "iconName": "Fangbody",
-          "class": "='ms-fontColor-' + if(indexOf(join(@currentField,''),'Pet supplies') != -1, 'themeDark', 'neutral')"
+          "class": "='ms-fontColor-' + if(indexOf(join(@currentField,''),'Pet supplies') != -1, 'brown', 'themeLighterAlt')"
         },
         "style": {
           "padding": "0 2px"
@@ -43,7 +43,7 @@
         "attributes": {
           "title": "Medical",
           "iconName": "Medical",
-          "class": "='ms-fontColor-' + if(indexOf(join(@currentField,''),'Medicine') != -1, 'themeDark', 'neutralLight')"
+          "class": "='ms-fontColor-' + if(indexOf(join(@currentField,''),'Medicine') != -1, 'red', 'themeLighterAlt')"
         },
         "style": {
           "padding": "0 2px"
@@ -54,7 +54,7 @@
         "attributes": {
           "title": "Flashlight",
           "iconName": "Flashlight",
-          "class": "='ms-fontColor-' + if(indexOf(join(@currentField,''),'Flashlight') != -1, 'themeDark', 'neutral')"
+          "class": "='ms-fontColor-' + if(indexOf(join(@currentField,''),'Flashlight') != -1, 'orange', 'themeLighterAlt')"
         },
         "style": {
           "padding": "0 2px"
