@@ -97,4 +97,6 @@ This one can take up to 20 minutes to take effect, so again we want to get it do
 
  You can skip adding members to the Team because there probably isn't anyone to add in your new tenant!
 
+ f. Click the Files tab in the General channel. You may get a message saying it's not ready yet; that's because the SharePoint site doesn't get provisioned until it's first used. You have just initiated the provisioning, and it will save you waiting a few minutes in the next exercise.
+
 When you're ready, please [proceed to the next section.](Part2.md)
