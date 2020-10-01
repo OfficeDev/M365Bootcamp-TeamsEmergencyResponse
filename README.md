@@ -19,11 +19,12 @@ This repository contains the entire workshop, including presentation material an
 
 ## The Workshop
 
- * [Part 1: Lab setup](Documents/Part1.md)
- * [Part 2: SharePoint News](Documents/Part2.md)
- * [Part 3: SharePoint List Tab](Documents/Part3.md)
- * [Part 4: SharePoint Framework tabs](Documents/Part4.md)
- * [Part 5: Calling the Microsoft Graph](Documents/Part5.md)
+ * [Exercise 1: Lab setup](Documents/Part1.md)
+ * [Exercise 2: SharePoint News](Documents/Part2.md)
+ * [Exercise 3: SharePoint List Tab](Documents/Part3.md)
+ * [Exercise 4: SharePoint Framework tabs](Documents/Part4.md)
+ * [Exercise 5: Calling the Microsoft Graph](Documents/Part5.md)
+ * [Challenges: Ideas for going beyond the lab exercises](Documents/Challenges.md)
  * [Resources](Documents/Resources.md)
  
 ## Contributing

@@ -1,11 +1,12 @@
 # Part 5: Calling the Microsoft Graph
 
- * [Part 1: Lab setup](Documents/Part1.md)
- * [Part 2: SharePoint News](Documents/Part2.md)
- * [Part 3: SharePoint List Tab](Documents/Part3.md)
- * [Part 4: SharePoint Framework tabs](Documents/Part4.md)
- * [Part 5: Calling the Microsoft Graph](Documents/Part5.md) <-- this section
- * [Resources](Documents/Resources.md)
+ * [Exercise 1: Lab setup](Part1.md)
+ * [Exercise 2: SharePoint News](Part2.md)
+ * [Exercise 3: SharePoint List Tab](Part3.md)
+ * [Exercise 4: SharePoint Framework tabs](Part4.md)
+ * [Exercise 5: Calling the Microsoft Graph](Part5.md) **(You are here)**
+ * [Challenges: Ideas for going beyond the lab exercises](Challenges.md)
+ * [Resources](Resources.md)
 
 
 
@@ -20,4 +21,6 @@
 
 
 
-  [Resources are here](Documents/Part5.md)
+Congratulations, you've completed all 5 parts of the workshop! Please check out these pages:
+ * [Challenges](Challenges.md): ideas on how to go beyond the labs
+ * [Resources](Resourcs.md): links to documentation and learning resources

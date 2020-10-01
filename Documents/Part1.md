@@ -1,11 +1,12 @@
 # Part 1: Lab Setup
 
- * [Part 1: Lab setup](Documents/Part1.md) <-- this section
- * [Part 2: SharePoint News](Documents/Part2.md)
- * [Part 3: SharePoint List Tab](Documents/Part3.md)
- * [Part 4: SharePoint Framework tabs](Documents/Part4.md)
- * [Part 5: Calling the Microsoft Graph](Documents/Part5.md)
- * [Resources](Documents/Resources.md)
+ * [Exercise 1: Lab setup](Part1.md) **(You are here)**
+ * [Exercise 2: SharePoint News](Part2.md)
+ * [Exercise 3: SharePoint List Tab](Part3.md)
+ * [Exercise 4: SharePoint Framework tabs](Part4.md)
+ * [Exercise 5: Calling the Microsoft Graph](Part5.md)
+ * [Challenges: Ideas for going beyond the lab exercises](Challenges.md)
+ * [Resources](Resources.md)
 
 In this section, you'll set up your tenant for SharePoint and Teams development.
 
@@ -96,4 +97,4 @@ This one can take up to 20 minutes to take effect, so again we want to get it do
 
  You can skip adding members to the Team because there probably isn't anyone to add in your new tenant!
 
- [Next section is here](Documents/Part2.md)
+When you're ready, please [proceed to the next section.](Part2.md)
