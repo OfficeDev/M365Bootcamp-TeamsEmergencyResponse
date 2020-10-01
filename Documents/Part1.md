@@ -28,7 +28,7 @@ By default, end users can't upload Teams applications directly; instead an admin
 
   ![M365 Admin](images/Part1-M365Admin2.png)
 
-  b. In the left of the Microsoft Teams admin center, open the Teams apps accordion (1) and select Setup Policies (2). You will see a list of App setup policies. Click the Global (Org-wide default) policy (3).
+  b. In the left of the Microsoft Teams admin center, open the Teams apps accordion 1️⃣ and select Setup Policies 2️⃣. You will see a list of App setup policies. Click the Global (Org-wide default) policy 3️⃣.
 
   ![Teams admin](images/Part1-TeamsAdmin1.png)
 
@@ -46,7 +46,7 @@ This one can take up to 20 minutes to take effect, so again we want to get it do
 
  ![M365 admin](images/Part1-M365Admin3.png)
 
- b. In the SharePoint admin center, click "More Features" (1) and then open the Apps page (2).
+ b. In the SharePoint admin center, click "More Features" 1️⃣ and then open the Apps page 2️⃣.
 
  ![M365 admin](images/Part1-SPAdmin1.png)
 
@@ -60,10 +60,10 @@ This one can take up to 20 minutes to take effect, so again we want to get it do
 
  On the Create App Catalog Site Collection screen,
 
-  * (1) Set the title to "Catalog"
-  * (2) Don't change the host name or managed path of the Web Site address, but do complete the address with "catalog"
-  * (3) Make yourself the administrator of the app catalog by typing "Admin" and click the small person icon
-  * (4) Server resource quota is obsolete; you can leave it or set it to zero
+  * 1️⃣ Set the title to "Catalog"
+  * 2️⃣ Don't change the host name or managed path of the Web Site address, but do complete the address with "catalog"
+  * 3️⃣ Make yourself the administrator of the app catalog by typing "Admin" and click the small person icon
+  * 4️⃣ Server resource quota is obsolete; you can leave it or set it to zero
 
   Click OK to create the app catalog.
 
@@ -79,7 +79,7 @@ This one can take up to 20 minutes to take effect, so again we want to get it do
 
  ![Teams](images/Part1-Teams1.png)
 
- b. Click "Join or create a team" to create your team (1); then click the "Create Team" button (2).
+ b. Click "Join or create a team" to create your team 1️⃣; then click the "Create Team" button 2️⃣.
 
  ![Teams](images/Part1-Teams2.png)
 
@@ -91,7 +91,7 @@ This one can take up to 20 minutes to take effect, so again we want to get it do
 
  ![Teams](images/Part1-Teams4.png)
 
- e. Name your Team "Emergency Response" (1) and click "Create" (2).
+ e. Name your Team "Emergency Response" 1️⃣ and click "Create" 2️⃣.
 
   ![Teams](images/Part1-Teams5.png)
 

@@ -12,27 +12,27 @@ In this exercise, you will create a news site in SharePoint and connect it to th
 
 ## Step 1: Add the SharePoint connector
 
-To the right of the General channel, click the elipsis 1️⃣ to open the context menu, and select Connectors 2️⃣.
+a. To the right of the General channel, click the elipsis 1️⃣ to open the context menu, and select Connectors 2️⃣.
 
 ![SharePoint Connector](images/Part2-SPConnector01.png)
 
-Find the SharePoint News connector; you may need to search 1️⃣. Click Add 2️⃣ to add the connector.
+b. Find the SharePoint News connector; you may need to search 1️⃣. Click Add 2️⃣ to add the connector.
 
 ![SharePoint Connector](images/Part2-SPConnector02.png)
 
-Click Add in the screen which follows, and then Save in the screen after that to save the connector. (NOTE: That last screen with the Save button is from SharePoint, not Teams; this is where Teams applications have a chance to configure their connector. In this case, SharePoint didn't require any configuration.)
+c. Click Add in the screen which follows, and then Save in the screen after that to save the connector. (NOTE: That last screen with the Save button is from SharePoint, not Teams; this is where Teams applications have a chance to configure their connector. In this case, SharePoint didn't require any configuration.)
 
 ## Step 2: Add some news to the SharePoint site
 
-Still in the General channel, click the elipsis in the upper right corner 1️⃣ to open the menu and select "Open in SharePoint" 2️⃣. 
+a. Still in the General channel, click the elipsis in the upper right corner 1️⃣ to open the menu and select "Open in SharePoint" 2️⃣. 
 
 ![SharePoint Connector](images/Part2-SPConnector06.png)
 
-This will bring you into the SharePoint site that's associated with this Team, viewing the file folder for the channel. Navigate to the Home page.
+b. This will bring you into the SharePoint site that's associated with this Team, viewing the file folder for the channel. Navigate to the Home page.
 
 ![SharePoint Connector](images/Part2-SPConnector07.png)
 
-On the home page under News, click Add. Add one News Post and one News Link.
+c. On the home page under News, click Add. Add one News Post and one News Link.
 
 ![SharePoint Connector](images/Part2-SPConnector08.png)
 
@@ -41,19 +41,20 @@ When you create the News Post, search for a stock image that conveys an emergenc
 ![SharePoint Connector](images/Part2-SPConnector09.png)
 
 ## Step 3: Add a News tab to the General channel
-Return to the General channel in Microsoft Teams. To the right of the tabs, click "+" to add a tab to the channel.
+
+a. Return to the General channel in Microsoft Teams. To the right of the tabs, click "+" to add a tab to the channel.
 
 ![SharePoint Connector](images/Part2-SPConnector10.png)
 
-Find the SharePoint tab and add it to the channel.
+b. Find the SharePoint tab and add it to the channel.
 
 ![SharePoint Connector](images/Part2-SPConnector11.png)
 
-Be sure you select the default SharePoint site 1️⃣ and click the Home page 2️⃣ to select it. Click Save 3️⃣ and view your news page.
+c. Be sure you select the default SharePoint site 1️⃣ and click the Home page 2️⃣ to select it. Click Save 3️⃣ and view your news page.
 
 ![SharePoint Connector](images/Part2-SPConnector12.png)
 
-Rename the tab "News" and drag it to the left of the wiki tab.
+d. Rename the tab "News" and drag it to the left of the wiki tab.
 
 ![SharePoint Connector](images/Part2-SPConnector13.png)
 
