@@ -12,4 +12,15 @@
 links to documentation and learning resources
 
 
- 
+ [Building Microsoft Teams apps with SharePoint pages](https://bob1german.com/2020/01/06/teams-apps-with-sharepoint1/)
+
+ [App studio installation instructions](https://docs.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/app-studio-overview)
+
+New [Teams Developer documentation](https://docs.microsoft.com/en-us/microsoftteams/platform/)
+
+Andrew's [Learn Module](https://docs.microsoft.com/en-us/learn/modules/intro-microsoft-teams-apps/)
+
+ ![Resources](images/Resources-01.png)
+ ![Resources](images/Resources-02.png)
+ ![Resources](images/Resources-03.png)
+ ![Resources](images/Resources-04.png)
