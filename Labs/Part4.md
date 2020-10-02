@@ -38,16 +38,40 @@ a. Clone or download the bootcamp repository by returing to the [project page](.
 
 b. To view the source code, open the [project folder (Solution/MapViewer)](../Solution/MapViewer/) in your code editor. If you don't have a code editor, you can [view it in the browser here](../Solution/MapViewer). You don't need to change the code, however, until the next exercise.
 
-c. If you have developer tools installed, open a command line program and and browse to the MapViewer folder.  and run these Node commands:
+c. If you don't have developer tools installed, you can find the finished solution package in the [Solution/MapViewerPackages/Exercise 4](../Solution/MapViewerPackages/Exercise%204) folder. download the map-viewer.sppkg file and skip to Step 2.
 
-, and want to build a version for local use, 
+If you do have developer tools installed, open a command line program and and browse to the MapViewer folder. 
+
+Install the needed Node.js packages using this command:
 
 ~~~bash
 npm install
-npm bundle
 ~~~
 
-If you don't have them, 
+If you want to run from a local web server so you don't have to upload your changes each time you make a change, run these commands:
+
+~~~bash
+gulp bundle
+gulp package-solution
+gulp serve --nobrowser
+~~~
+
+That last command starts a local web server at https://localhost:4321; and the SharePoint package points to that URL instead of a CDN so be sure leave it running or your solution won't work/.
+
+If you want to upload your JavaScript bundle to the SharePoint public CDN so it will work away from your development chomputer, run these commands:
+
+~~~bash
+gulp bundle --ship
+gulp package-solution --ship
+~~~
+
+In either case, your bundle can be found in the MapVewer/sharepoint folder with the name `map-viewer.sppkg`.
+
+## Step 2: Upload the SharePoint solution package to the SharePoint App Catalog
+
+a. Return to the SharePoint app catalog. You can review [Exercise 1 Step 3](Part1.md) if you need a reminder on how to get there.
+
+b. Upload the SharePoint solution package (.sppkg file) from Step 1 
 
 
 
