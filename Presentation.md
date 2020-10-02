@@ -1,6 +1,6 @@
 # Build an Emergency Response solution with Teams and SharePoint
 
-![Slide](./Labs/Images/Slide2.PNG)
+![Slide](./Labs/images/Slide2.PNG)
 
 In this half day workshop, you will learn how to build solutions with Microsoft Teams and Microsoft SharePoint. In the process, you will build a simple Emergency Response Center which could be used to coordinate the response to an emergency such as a natural disaster. This could complement the [Crisis Communication Power App template](https://powerapps.microsoft.com/en-us/blog/crisis-communication-a-power-platform-template/), which helps to keep employees informed during a crisis; this solution is for the reponse team themselves.
 
@@ -29,42 +29,42 @@ You will build:
  * [Exercise 5: Calling the Microsoft Graph](Labs/Part5.md)
  * [Resources](Labs/Resources.md)
 
-![Slide](./Labs/Images/Slide3.PNG)
+![Slide](./Labs/images/Slide3.PNG)
 
-![Slide](./Labs/Images/Slide4.PNG)
+![Slide](./Labs/images/Slide4.PNG)
 
-![Slide](./Labs/Images/Slide5.PNG)
+![Slide](./Labs/images/Slide5.PNG)
 
-![Slide](./Labs/Images/Slide6.PNG)
+![Slide](./Labs/images/Slide6.PNG)
 
-![Slide](./Labs/Images/Slide7.PNG)
+![Slide](./Labs/images/Slide7.PNG)
 
-![Slide](./Labs/Images/Slide8.PNG)
+![Slide](./Labs/images/Slide8.PNG)
 
-![Slide](./Labs/Images/Slide9.PNG)
+![Slide](./Labs/images/Slide9.PNG)
 
-![Slide](./Labs/Images/Slide10.PNG)
+![Slide](./Labs/images/Slide10.PNG)
 
-![Slide](./Labs/Images/Slide11.PNG)
+![Slide](./Labs/images/Slide11.PNG)
 
-![Slide](./Labs/Images/Slide12.PNG)
+![Slide](./Labs/images/Slide12.PNG)
 
-![Slide](./Labs/Images/Slide13.PNG)
+![Slide](./Labs/images/Slide13.PNG)
 
-![Slide](./Labs/Images/Slide14.PNG)
+![Slide](./Labs/images/Slide14.PNG)
 
-![Slide](./Labs/Images/Slide15.PNG)
+![Slide](./Labs/images/Slide15.PNG)
 
-![Slide](./Labs/Images/Slide16.PNG)
+![Slide](./Labs/images/Slide16.PNG)
 
-![Slide](./Labs/Images/Slide17.PNG)
+![Slide](./Labs/images/Slide17.PNG)
 
-![Slide](./Labs/Images/Slide18.PNG)
+![Slide](./Labs/images/Slide18.PNG)
 
-![Slide](./Labs/Images/Slide19.PNG)
+![Slide](./Labs/images/Slide19.PNG)
 
-![Slide](./Labs/Images/Slide20.PNG)
+![Slide](./Labs/images/Slide20.PNG)
 
-![Slide](./Labs/Images/Slide21.PNG)
+![Slide](./Labs/images/Slide21.PNG)
 
-![Slide](./Labs/Images/Slide22.PNG)
+![Slide](./Labs/images/Slide22.PNG)
