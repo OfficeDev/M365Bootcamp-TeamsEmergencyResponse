@@ -15,4 +15,5 @@ export interface IGraphService {
         itemId: number, updates: any): Promise<void | string>;
     createList(siteId: string, listName: string, mapper: IFieldMapper):
         Promise<string>;
+    sendToChannel(message: string): Promise<void | string>;
 }

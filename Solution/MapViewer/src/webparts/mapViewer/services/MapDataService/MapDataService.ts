@@ -50,6 +50,9 @@ export default class MapDataService implements IMapDataService {
                                 longitude: p.longitude
                             }
                         );
+                        await this.serviceProps.graphService.sendToChannel(
+                            `New point ${p.title} added at ${p.latitude}, ${p.longitude}`
+                        );
                     }
                 }
             }
