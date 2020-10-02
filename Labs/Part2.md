@@ -5,12 +5,13 @@
  * [Exercise 3: SharePoint List Tab](Part3.md)
  * [Exercise 4: SharePoint Framework tabs](Part4.md)
  * [Exercise 5: Calling the Microsoft Graph](Part5.md)
- * [Challenges: Ideas for going beyond the lab exercises](Challenges.md)
  * [Resources](Resources.md)
 
-In this exercise, you will create a news site in SharePoint and connect it to the Emergency Response team you set up in Part 1. This exercise is optional - the remaining parts do not depend on it - so you could choose to skip it or come back to it later, and proceed directly to [Part 3](Part3.md)
+In this exercise, you will create a news site in SharePoint and connect it to the Emergency Response team you set up in [Exercise 1](Part1.md). This exercise is optional - the remaining parts do not depend on it - so you could choose to skip it or come back to it later, and proceed directly to [Exercise 3](Part3.md)
 
 ## Step 1: Add the SharePoint connector
+
+Begin in the Emergency Response Team you created in the previous exercise.
 
 a. To the right of the General channel, click the elipsis 1️⃣ to open the context menu, and select Connectors 2️⃣.
 
@@ -20,7 +21,12 @@ b. Find the SharePoint News connector; you may need to search 1️⃣. Click Add
 
 ![SharePoint Connector](images/Part2-SPConnector02.png)
 
-c. Click Add in the screen which follows, and then Save in the screen after that to save the connector. (NOTE: That last screen with the Save button is from SharePoint, not Teams; this is where Teams applications have a chance to configure their connector. In this case, SharePoint didn't require any configuration.)
+c. Click Add in the screen which follows, and then Save in the screen after that to save the connector.
+
+---
+⛏️ WHY TWO SCREENS WHEN ADDING THE CONNECTOR? The first screen was from Microsoft Teams to make sure you're installing the right connector. The second screen with the Save button was a configuration screen provided by the Teams application. The SharePoint News connector didn't require any configuration, but you could build a connector that is configurable, allowing the user to decide what information they want sent.)
+
+---
 
 ## Step 2: Add some news to the SharePoint site
 
@@ -39,6 +45,11 @@ c. On the home page under News, click Add. Add one News Post and one News Link.
 When you create the News Post, search for a stock image that conveys an emergency. For the News Link, search the Internet for a news story about an emergency and paste the URL.
 
 ![SharePoint Connector](images/Part2-SPConnector09.png)
+
+---
+⛏️ DO MORE WITH  SHAREPOINT NEWS: This exercise is only the beginning. News stories can appear in SharePoint hub sites, the SharePoint mobile app, in personalized news feeds, and more! [This article](https://support.microsoft.com/office/create-and-share-news-on-your-sharepoint-sites-495f8f1a-3bef-4045-b33a-55e5abe7aed7?WT.mc_id=M365-github-rogerman) has the details.
+
+---
 
 ## Step 3: Add a News tab to the General channel
 
@@ -62,12 +73,10 @@ d. Rename the tab "News" and drag it to the left of the wiki tab.
 
 ![SharePoint Connector](images/Part2-SPConnector14.png)
 
+---
+🏁 CHALLENGE: Add more information to the site home page such as useful links, upcoming safety drills and preparedness events, policies and procedures, etc.
+
+---
+
+
 When you're ready, please [proceed to the next section.](Part3.md)
-
-## Challenges
-
- * In the News tab, click the Conversation button and start a conversation about the news
-
-![SharePoint Connector](images/Part2-SPConnector15.png)
-
- * Add useful links and other content to the home page

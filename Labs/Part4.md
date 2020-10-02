@@ -5,7 +5,6 @@
  * [Exercise 3: SharePoint List Tab](Part3.md)
  * [Exercise 4: SharePoint Framework tabs](Part4.md) **(You are here)**
  * [Exercise 5: Calling the Microsoft Graph](Part5.md)
- * [Challenges: Ideas for going beyond the lab exercises](Challenges.md)
  * [Resources](Resources.md)
 
 In this exercise, you will build a map tab that can display trouble spots during an emergency. Tha tab is built as a SharePoint Framework web part, where Sharepoint provides hosting, authentication, and a number of other services. As in Exercise 3, the data is stored in a SharePoint list, but this time the list is accessed using the Microsoft 365 Graph.
@@ -34,7 +33,11 @@ npm install gulp yo @microsoft/generator-sharepoint --global
 gulp trust-dev-cert
 ~~~
 
-The `gulp trust-dev-cert` command adds the SharePoint Framework's local SSL certificate to your certificate store so you can test your solutions with the JavaScript bundle running locally.
+---
+⛏️ SHAREPOINT FRAMEWORK REQUIRES HTTPS. The `gulp trust-dev-cert` command adds the SharePoint Framework's local SSL certificate to your certificate store so you can test your solutions with the JavaScript bundle running locally.
+
+
+---
 
 ## Step 1: Download and build the project
 
@@ -44,7 +47,7 @@ a. Clone or download the bootcamp repository by returing to the [project page](.
 
 b. To view the source code, open the [project folder (Solution/MapViewer)](../Solution/MapViewer/) in your code editor. If you don't have a code editor, you can [view it in the browser here](../Solution/MapViewer). You don't need to change the code, however, until the next exercise.
 
-c. If you don't have developer tools installed, you can find the finished solution package in the [Solution/MapViewerPackages/Exercise 4](../Solution/MapViewerPackages/Exercise%204) folder. download the map-viewer.sppkg file and skip to Step 2.
+c. If you don't have developer tools installed, you can find the finished solution package in the [Solution/MapViewerPackages/Exercise 4](../Solution/MapViewerPackages/Exercise%204) folder. Download the map-viewer.sppkg file and skip to Step 2.
 
 If you do have developer tools installed, open a command line program and and browse to the MapViewer folder. 
 
@@ -54,7 +57,7 @@ Install the needed Node.js packages using this command:
 npm install
 ~~~
 
-If you want to run from a local web server so you don't have to upload your changes each time you make a change, run these commands:
+OPTION 1: If you want to run from a local web server so you don't have to upload your changes each time you make a change, run these commands:
 
 ~~~bash
 gulp bundle
@@ -62,9 +65,9 @@ gulp package-solution
 gulp serve --nobrowser
 ~~~
 
-That last command starts a local web server at https://localhost:4321; and the SharePoint package points to that URL instead of a CDN so be sure leave it running or your solution won't work/.
+That last command starts a local web server at https://localhost:4321; and the SharePoint package points to that URL instead of a CDN so be sure leave it running.
 
-If you want to upload your JavaScript bundle to the SharePoint public CDN so it will work away from your development chomputer, run these commands:
+OPTION 2: If you want to upload your JavaScript bundle to the SharePoint public CDN so it will work away from your development computer, run these commands:
 
 ~~~bash
 gulp bundle --ship
@@ -119,6 +122,11 @@ c. Next the tab confirugration page will come up; click "Save".
 
 ![Part4](images/Part4-09.png)
 
+---
+⛏️ WHY AN EMPTY PAGE WITH A BIG TEAMS LOGO? In Teams channels and group conversations, tabs are _configurable_. This means the app provides a configuration page where the user can decide what the tab should show. In this case, SharePoint didn't need any additional information, so they just showed the Teams logo. This allows your SharePoint Framework web part to use the standard web part editing experience, which you'll see in just a moment.
+
+---
+
 d. The tab will open but initially the map won't work because it requires a Bing Maps key. You can get a free Bing Maps key at the [Bing Maps Get Started](https://www.microsoft.com/en-us/maps/create-a-bing-maps-key) page. If you are taking a live workshop, your instructor may be able to provide you with a temporary Bing Maps key.
 
 Enter the Bing Maps key into the property panel 1️⃣ and decide if you want an aerial or road map 2️⃣. The web part will create a list to store the points on the map; you can choose a different list name if you wish 3️⃣. When you're done click "Apply" 4️⃣.
@@ -129,6 +137,11 @@ Don't forget to close the configuration panel.
 
 ![Part4](images/Part4-11.png)
 
+---
+⛏️ THE CONFIGURATION PANEL on the right is the normal web part property pane used by any web part. By using the same method in Teams, it's easier for developers to build solutions that work in both SharePoint sites and Teams tabs.
+
+---
+
 e. Click the "Edit points" button to add some points to the map. This will open the SharePoint list in a Teams Task Module, which is just an IFrame disguised as a modal dialog box. Using the list user interface saves writing code to manage the points on the map.
 
 Create each new point by clicking the New button 1️⃣. Enter a title and subtitle to be displayed, as well as the street address of the location you want to highlight 2️⃣. Often you can enter the name of an attraction in place of an address.
@@ -136,6 +149,14 @@ Create each new point by clicking the New button 1️⃣. Enter a title and subt
 ![Part4](images/Part4-12.png)
 
 Enter a few points that aren't too far apart and close the task module.
+
+---
+⛏️ The trick here is to avoid writing all the code to create, read, update, and delete map points but instead just show the SharePoint list in a [task module](https://docs.microsoft.com/microsoftteams/platform/task-modules-and-cards/what-are-task-modules?WT.mc_id=M365-github-rogerman). Task modules are IFrames showing a web page in the form of a modal dialog box. You can view the code in [MessagePanel.tsx](../Solution/MapViewer/src/webparts/mapViewer/components/MessagePanel.tsx) in the `LaunchEditor()` function. Notice that when the task module is closed the display is refreshed to update the points on the map.
+
+---
+⛏️ Geocoding is done in [BingMapsService.ts](../Solution/MapViewer/src/webparts/mapViewer/services/BingMapsService/BingMapsService.ts). Since this will call the Bing Maps web service, it was necessary to add an entry for the hostname to the `validDomains` array in the [Teams manifest](../Solution/MapViewer/src/webparts/mapViewer/Teams/manifest.json); otherwise Teams will block the access. Wildcards are permitted, so the entry is `*.virtualearth.net` to allow any host name within that DNS domain.
+
+---
 
 ![Part4](images/Part4-13.png)
 
@@ -153,24 +174,29 @@ Notice the buttons just above your tab (and every tab) on the right.
 
 ![Part4](images/Part4-15.png)
 
-The first button opens a conversation panel so you can chat about the tab. The chat shows up in the channel's Posts as well, drawing people into the conversation.
+1️⃣ opens a conversation panel so you can chat about the tab. The chat shows up in the channel's Posts as well, drawing people into the conversation.
 
-The second button expands the tab so it gets more space on the screen.
+2️⃣ expands the tab so it gets more space on the screen.
 
-The third button refreshes just the tab; this is very handy when you're debugging!
+3️⃣ refreshes just the tab; this is very handy when you're debugging!
 
 ![Part4](images/Part4-17.png)
 
-## Step 5: Debug your tab
+## Step 6: Debug your tab
 
 If you've set up the SharePoint Framework development environment and are serving the project files up from localhost, you also have the advantage of a map file for debugging. This file unscrambles the JavaScript bundle and reconstructs the orginal Typescript source for your debugging pleasure.
 
-You might choose to attach Visual Studio code to your browser to debug, but you could just open up the browser's developer tools. 
+You might choose to [attach Visual Studio code to your browser](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code?WT.mc_id=M365-github-rogerman) to debug, but you can also just open up the browser's developer tools. 
 
-a. Open your browser tools; for Chrome and the new Chromium-based Microsoft Edge, you can do that by pressing ctrl (or option) + shift + I. Examine the page hierarchy; notice the embedded-page-container 1️⃣ ; that's the IFrame your tab is running in. The IFrame is actually a SharePoint page in the site associated with this Team.  Inside the IFrame, you can see localhost:4321 2️⃣, which is where SharePoint is getting the JavaScript bundle for your solution. But if you look there, you'll find the raw JavaScript bundle, which is hard to read. What we want is under the webpack:// node 3️⃣, which is where the map file has been used to reconstruct the original TypeScript source. However, there's no need to go digging; just click ctrl (or option) + P and type the name of a source file such as MapViewerWebPart.ts to expose the source code.
+a. Open your browser's developer tools; for Chrome and the new Chromium-based Microsoft Edge, you can do that by pressing ctrl (or option) + shift + I. Examine the page hierarchy; notice the embedded-page-container 1️⃣ ; that's the IFrame your tab is running in.  Inside the IFrame, you can see localhost:4321 2️⃣, which is where SharePoint is getting the JavaScript bundle for your solution. But if you look there, you'll find the raw JavaScript bundle, which is hard to read. What we want is under the webpack:// node 3️⃣, which is where the map file has been used to reconstruct the original TypeScript source. However, there's no need to go digging; just click ctrl (or option) + P and type the name of a source file such as MapViewerWebPart.ts to expose the source code.
 
 ![Part4](images/Part4-Debug01.png)
 
+---
+⛏️ Your tab is hosted in a special SharePoint page, `/_layouts/15/teamshostedapp.aspx`, in the site associated with this Team. Personal tabs implemented as web parts are shown in the root SharePoint site under that URL, which is one reason to make the root site readable by everyone in an organization.
+
+---
+ 
 b. Try setting a breakpoint in, say, the onInit() function. Refresh the just the tab using the refresh button you tried in the last step, and hit the breakpoint.
 
 When you're ready, please [proceed to the next section.](Part5.md)

@@ -27,6 +27,27 @@ This repository contains the entire workshop, including presentation material an
  * [Challenges: Ideas for going beyond the lab exercises](Labs/Challenges.md)
  * [Resources](Labs/Resources.md)
  
+## Using the labs
+
+There are a lot of screen shots, which always appear _after_ the written instruction they refer to. Call-outs in the screen shots are referenced in the text using keycaps ( 1️⃣, 2️⃣, etc.)
+
+The documentation includes some asides that can safely be skipped when following a list of instructions:
+
+---
+😎 BEST PRACTICE: Really there are no "best practices", only tradeoffs. In a lab or hack, the tradeoffs are made in favor of simplicity; these notations recommend approaches to consider working on a real project.
+
+---
+
+---
+⛏️ DIG DEEPER: Check out these entries if you're interested in more technical detail.
+
+---
+
+---
+🏁 CHALLENGE: Ideas for going beyond the lab exercises to learn more on your own.
+
+---
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.

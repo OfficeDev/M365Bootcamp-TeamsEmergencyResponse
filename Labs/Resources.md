@@ -8,6 +8,7 @@
  * [Challenges: Ideas for going beyond the lab exercises](Challenges.md)
  * [Resources](Resources.md) **(You are here)**
 
+## STILL WORKING ON THIS PAGE
 
 links to documentation and learning resources
 

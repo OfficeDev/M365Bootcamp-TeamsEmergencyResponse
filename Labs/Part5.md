@@ -5,10 +5,9 @@
  * [Exercise 3: SharePoint List Tab](Part3.md)
  * [Exercise 4: SharePoint Framework tabs](Part4.md)
  * [Exercise 5: Calling the Microsoft Graph](Part5.md) **(You are here)**
- * [Challenges: Ideas for going beyond the lab exercises](Challenges.md)
  * [Resources](Resources.md)
 
-In this exercise, you'll add code to the solution which posts a message in the Teams channel when a new map point is added. The completed solution is in the ["Exercise 5" branch](#) of this repo.
+In this exercise, you'll add code to the solution which posts a message in the Teams channel when a new map point is added. The completed solution is in the ["Exercise 5" branch](https://github.com/OfficeDev/M365Bootcamp-TeamsEmergencyResponse/tree/Exercise5/Solution/MapViewer) of this repo.
 
 If you don't have developer tools, grab the map-view.sppkg file from the Exercise 5 folder and skip to Step 3.
 
@@ -21,6 +20,8 @@ The [src/webparts/mapView/services/GraphService](../Solution/MapViewer/src/webpa
 ~~~typescript
 sendToChannel(message: string): Promise<void | string>;
 ~~~
+
+The completed file is [here](https://github.com/OfficeDev/M365Bootcamp-TeamsEmergencyResponse/blob/Exercise5/Solution/MapViewer/src/webparts/mapViewer/services/GraphService/IGraphService.ts).
 
 b. In the GraphService.ts file, import a reference to the Teams JavaScript SDK at the top of the file.
 
@@ -73,7 +74,7 @@ public async sendToChannel(message: string): Promise<void | string> {
 }
 ~~~
 
-The completed file is [here](#).
+The completed file is [here](https://github.com/OfficeDev/M365Bootcamp-TeamsEmergencyResponse/blob/Exercise5/Solution/MapViewer/src/webparts/mapViewer/services/GraphService/GraphService.ts).
 
 c. The [src/webparts/mapView/services/MapDataService](../Solution/MapViewer/src/webparts/mapView/services/MapDataService) folder contains the code that reads and updates map points using the Graph service and the Bing Maps service. Modify .MapDataService[MapDataService.ts](../Solution/MapViewer/src/webparts/mapView/services/MapDataService/MapDataService.ts) to add a call to the new `sendToChannel()` function. Add it to the `getMapPoints()` function just below the call to `updateListItem()`. The updated `getMapPoints()` function should look like this:
 
@@ -135,6 +136,8 @@ public async getMapPoints(geocode: boolean): Promise<ILocation[]> {
 }
 ~~~
 
+The completed file is [here](https://github.com/OfficeDev/M365Bootcamp-TeamsEmergencyResponse/blob/Exercise5/Solution/MapViewer/src/webparts/mapViewer/services/MapDataService/MapDataService.ts).
+
 d. We're going to need permission to use the Graph API to post in the Teams channel. To request this, edit the [config/package-solution.json](../Solution/MapViewer/config/package-solution.json) and add a new item in the `webApiPermissionRequests` array:
 
 ~~~json
@@ -144,45 +147,7 @@ d. We're going to need permission to use the Graph API to post in the Teams chan
       }
 ~~~
 
-Don't forget to comma separate the array items! The completed package-solution.json file should look like this:
-
-~~~json
-{
-  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
-  "solution": {
-    "name": "map-viewer-client-side-solution",
-    "id": "3f215ef6-ff06-4858-9195-a3eb4b3e1f20",
-    "version": "1.0.0.0",
-    "includeClientSideAssets": true,
-    "skipFeatureDeployment": true,
-    "webApiPermissionRequests": [
-      {
-        "resource": "Microsoft Graph",
-        "scope": "Sites.ReadWrite.All"
-      },
-      {
-        "resource": "Microsoft Graph",
-        "scope": "Sites.Manage.All"
-      },
-      {
-        "resource": "Microsoft Graph",
-        "scope": "ChannelMessage.Send"
-      }
-    ],
-    "isDomainIsolated": false,
-    "developer": {
-      "name": "Bob German",
-      "websiteUrl": "https://bob1german.com",
-      "privacyUrl": "https://privacy.microsoft.com",
-      "termsOfUseUrl": "https://opensource.microsoft.com/",
-      "mpnId": ""
-    }
-  },
-  "paths": {
-    "zippedPackage": "solution/map-viewer.sppkg"
-  }
-}
-~~~
+The completed file is [here](https://github.com/OfficeDev/M365Bootcamp-TeamsEmergencyResponse/blob/Exercise5/Solution/MapViewer/config/package-solution.json).
 
 ## Step 2: Rebuild the SharePoint solution package
 
@@ -216,6 +181,4 @@ a. Return to Microsoft Teams and refresh the Map View tab. Add a new point to th
 
 ![Part4](images/Part5-03.png)
 
-Congratulations, you've completed all 5 parts of the workshop! Please check out these pages:
- * [Challenges](Challenges.md): ideas on how to go beyond the labs
- * [Resources](Resourcs.md): links to documentation and learning resources
+Congratulations, you've completed all 5 parts of the workshop! Please check out [these resources](Resourcs.md) and thanks for your interest in Microsoft 365 development!
