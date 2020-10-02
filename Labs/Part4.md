@@ -26,7 +26,7 @@ nvm list              # List the installed versions
 nvm use (version)     # Switch to the specified Node version
 ~~~
 
-Once you've installed a supported version of Node, installing the rest of the SharePoint Framework toolchain is easy. You can follow [these detailed instructions](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-development-environment), or run just these Node commands:
+Once you've installed a supported version of Node, installing the rest of the SharePoint Framework toolchain is easy. You can follow [these detailed instructions](https://docs.microsoft.com/sharepoint/dev/spfx/set-up-your-development-environment?WT.mc_id=M365-github-rogerman), or run just these Node commands:
 
 ~~~bash
 npm install gulp yo @microsoft/generator-sharepoint --global
@@ -41,7 +41,7 @@ gulp trust-dev-cert
 
 ## Step 1: Download and build the project
 
-a. Clone or download the bootcamp repository by returing to the [project page](../) and clicking the Code button. 
+a. Clone or download the bootcamp repository by returing to the [project page](../../../) and clicking the Code button. 
 
 ![Part4](images/Part4-01.png)
 
