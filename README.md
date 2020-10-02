@@ -10,7 +10,7 @@ You will build:
  * A tab for coordinating supplies and where they're needed, based on a SharePoint list
  * A tab for viewing problem locations on a map, written in SharePoint Framework and backed by another SharePoint list using Microsoft Graph
 
-This repository contains the entire workshop, including [presentation material](Presentation.md) and step-by-step instructions.
+This repository contains the entire workshop, including [presentation material](Presentation.md), source code, and step-by-step instructions.
 
 To complete the hands-on portion of the lab, you will need:
 
@@ -20,6 +20,8 @@ To complete the hands-on portion of the lab, you will need:
     * [Node Version Manager (nvm)](http://npm.github.io/installation-setup-docs/installing/using-a-node-version-manager.html) (optional but recommended to allow switching Node versions)
     * [Node.js](https://nodejs.org/en/) (SharePoint Framework currently requires version LTS 10.x)
     * A code editor such as [Visual Studio Code](https://code.visualstudio.com/download?WT.mc_id=M365-github-rogerman)
+
+    Completed builds are included here as well, so if you don't need to install anything on your computer if you'd prefer to just follow along and use the pre-built packages.
 
 ## The Workshop
 
