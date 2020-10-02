@@ -154,7 +154,7 @@ Enter a few points that aren't too far apart and close the task module.
 ⛏️ The trick here is to avoid writing all the code to create, read, update, and delete map points but instead just show the SharePoint list in a [task module](https://docs.microsoft.com/microsoftteams/platform/task-modules-and-cards/what-are-task-modules?WT.mc_id=M365-github-rogerman). Task modules are IFrames showing a web page in the form of a modal dialog box. You can view the code in [MessagePanel.tsx](../Solution/MapViewer/src/webparts/mapViewer/components/MessagePanel.tsx) in the `LaunchEditor()` function. Notice that when the task module is closed the display is refreshed to update the points on the map.
 
 ---
-⛏️ Geocoding is done in [BingMapsService.ts](../Solution/MapViewer/src/webparts/mapViewer/services/BingMapsService/BingMapsService.ts). Since this will call the Bing Maps web service, it was necessary to add an entry for the hostname to the `validDomains` array in the [Teams manifest](../Solution/MapViewer/src/webparts/mapViewer/Teams/manifest.json); otherwise Teams will block the access. Wildcards are permitted, so the entry is `*.virtualearth.net` to allow any host name within that DNS domain.
+⛏️ Geocoding is done in [BingMapsService.ts](../Solution/MapViewer/src/webparts/mapViewer/services/BingMapsService/BingMapsService.ts). Since this will call the Bing Maps web service, it was necessary to add an entry for the hostname to the `validDomains` array in the [Teams manifest](../Solution/MapViewer/teams/manifest.json); otherwise Teams will block the access. Wildcards are permitted, so the entry is `*.virtualearth.net` to allow any host name within that DNS domain.
 
 ---
 
