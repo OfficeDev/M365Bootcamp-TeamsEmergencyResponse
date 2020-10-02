@@ -10,7 +10,9 @@ You will build:
  * A tab for coordinating supplies and where they're needed, based on a SharePoint list
  * A tab for viewing problem locations on a map, written in SharePoint Framework and backed by another SharePoint list using Microsoft Graph
 
-This repository contains the entire workshop, including presentation material and step-by-step instructions. To complete the hands-on portion of the lab, you will need:
+This repository contains the entire workshop, including [presentation material](Presentation.md) and step-by-step instructions.
+
+To complete the hands-on portion of the lab, you will need:
 
  * A computer with a web browser and an Internet connection (a phone is too small to successfully construct the solution, though it is usable from a mobile device.)
  * A Microsoft 365 Developer subscription (get one free at [https://aka.ms/M365DeveloperProgram](https://developer.microsoft.com/microsoft-365/dev-program?WT.mc_id=M365-github-rogerman), or one will be provided for you by the workshop facilitator.)
@@ -21,6 +23,7 @@ This repository contains the entire workshop, including presentation material an
 
 ## The Workshop
 
+ * [Presentation](Presentation.md)
  * [Exercise 1: Lab setup](Labs/Part1.md)
  * [Exercise 2: SharePoint News](Labs/Part2.md)
  * [Exercise 3: SharePoint List Tab](Labs/Part3.md)

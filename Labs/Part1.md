@@ -1,5 +1,6 @@
-# Part 1: Lab Setup
+# Exercise 1: Lab Setup
 
+ * [Presentation](../Presentation.md)
  * [Exercise 1: Lab setup](Part1.md) **(You are here)**
  * [Exercise 2: SharePoint News](Part2.md)
  * [Exercise 3: SharePoint List Tab](Part3.md)

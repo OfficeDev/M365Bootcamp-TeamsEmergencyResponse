@@ -1,5 +1,6 @@
-# Part 4: SharePoint Framework tabs
+# Exercise 4: SharePoint Framework tabs
 
+ * [Presentation](../Presentation.md)
  * [Exercise 1: Lab setup](Part1.md)
  * [Exercise 2: SharePoint News](Part2.md)
  * [Exercise 3: SharePoint List Tab](Part3.md)
