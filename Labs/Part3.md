@@ -130,7 +130,7 @@ d. Under "Complete these steps," click "Tabs" 1️⃣ and add a Personal tab 2�
 ![Exercise3](images/Part3-18b.png)
 
 ---
-⛏️ WHY A PERSONAL TAB? Well, personal tabs can be pinned to the Teams sidebar, and pushed out to users; you'll do that in the next step. 
+⛏️ WHY A PERSONAL TAB? Well, personal tabs can be pushed out to users and pinned to the Teams sidebar; you'll do that in the next step. 
 
 In order to build an app with tabs that work in Teams channels and group conversations, you need to create a configuration page. There's a challenge at the end of this exercise if you want to give that a try!
 
@@ -221,9 +221,12 @@ d. Back at the list of setup policies, select the policy you just created and "M
 It can take up to 24 hours for the app policy to take effect.
 
 ---
+😎 [USER VOICE](https://microsoftteams.uservoice.com/forums/555103-public) is the place to ask for Teams features, or to see what features other people are requesting. Teams engineering really does listen, and may indicate their intent to implement a feature right there in User Voice. Another place to check is the [Microsoft 365 Roadmap](https://www.microsoft.com/microsoft-365/roadmap?filters=&WT.mc_id=M365-github-rogerman), which shows features that are coming soon.
+
+---
 🏁 CHALLENGE: Make your app work in a Teams channel rather than using the Lists app. This requires a configuration page that interacts with users when the tab is added. 
 
-There's a SharePoint web part sample that can make any SharePoint page into a configuration page; [this article explains](https://bob1german.com/2020/01/07/teams-apps-with-sharepoint2/). For your convenience, the web part is already compiled and the SharePoint app package is [here in this repo](../Solution/MapViewerPackages/Exercise%203%20Challenges). The next exercise will teach you how to install it!
+There's a SharePoint web part sample that can make any SharePoint page into a configuration page; [this article explains](https://bob1german.com/2020/01/07/teams-apps-with-sharepoint2/). For your convenience, the web part is already compiled and the SharePoint app package is [here in this repo](../Solution/MapViewerPackages/Exercise%203%20Challenge%20-%20Configurable%20Tab). The next exercise will teach you how to install it!
 
 ---
 

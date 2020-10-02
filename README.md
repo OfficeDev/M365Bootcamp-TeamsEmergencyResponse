@@ -11,11 +11,11 @@ You will build:
 This repository contains the entire workshop, including presentation material and step-by-step instructions. To complete the hands-on portion of the lab, you will need:
 
  * A computer with a web browser and an Internet connection (a phone is too small to successfully construct the solution, though it is usable from a mobile device.)
- * A Microsoft 365 Developer subscription (get one free at [https://aka.ms/M365DeveloperProgram](https://aka.ms/M365DeveloperProgram), or one will be provided for you by the workshop facilitator.)
+ * A Microsoft 365 Developer subscription (get one free at [https://aka.ms/M365DeveloperProgram](https://developer.microsoft.com/microsoft-365/dev-program?WT.mc_id=M365-github-rogerman), or one will be provided for you by the workshop facilitator.)
  * For the coding exercises, you will need to install development tools on your computer:
-    * Node Version Manager (optional but recommended to allow switching Node versions)
-    * Node.js (SharePoint Framework currently requires version LTS 10.x)
-    * A code editor such as Visual Studio Code
+    * [Node Version Manager (nvm)](http://npm.github.io/installation-setup-docs/installing/using-a-node-version-manager.html) (optional but recommended to allow switching Node versions)
+    * [Node.js](https://nodejs.org/en/) (SharePoint Framework currently requires version LTS 10.x)
+    * A code editor such as [Visual Studio Code](https://code.visualstudio.com/download?WT.mc_id=M365-github-rogerman)
 
 ## The Workshop
 
@@ -24,7 +24,6 @@ This repository contains the entire workshop, including presentation material an
  * [Exercise 3: SharePoint List Tab](Labs/Part3.md)
  * [Exercise 4: SharePoint Framework tabs](Labs/Part4.md)
  * [Exercise 5: Calling the Microsoft Graph](Labs/Part5.md)
- * [Challenges: Ideas for going beyond the lab exercises](Labs/Challenges.md)
  * [Resources](Labs/Resources.md)
  
 ## Using the labs

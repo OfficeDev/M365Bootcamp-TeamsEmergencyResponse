@@ -23,6 +23,10 @@ Go to the [Microsoft 365 admin center](https://portal.office.com/AdminPortal/Hom
 😎 NAVIGATING MANY TENANTS: Consider creating a browser profile for each tenant that will have its own favorites, stored credentials, and cookies so you can easily work in your development tenant(s) as well as your production environment.
 
 ---
+😎 CHANGES ROLL OUT FIRST TO "TARGETED RELEASE" TENANTS. You may want to [enable Targeted Release](https://docs.microsoft.com/microsoft-365/admin/manage/release-options-in-office-365?WT.mc_id=M365-github-rogerman) in your developer tenant and keep production on Standard Release so you have a head start to test out new features.
+
+---
+
 
 ## Step 2: Enable Teams application uploads
 
