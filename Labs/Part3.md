@@ -1,14 +1,14 @@
-# Part 3: SharePoint List Tab
+# Exercise 3: SharePoint List Tab
 
+ * [Presentation](../Presentation.md)
  * [Exercise 1: Lab setup](Part1.md)
  * [Exercise 2: SharePoint News](Part2.md)
  * [Exercise 3: SharePoint List Tab](Part3.md) **(You are here)**
  * [Exercise 4: SharePoint Framework tabs](Part4.md)
  * [Exercise 5: Calling the Microsoft Graph](Part5.md)
- * [Challenges: Ideas for going beyond the lab exercises](Challenges.md)
  * [Resources](Resources.md)
 
-In this exercise you'll create a Teams application for managing inventory needs during an emergency. The app will be implemented as a SharePoint list, and published as a Teams tab.
+In this exercise you'll create a Teams application for managing supply needs during an emergency. The app will be implemented as a SharePoint list, and published as a Teams tab.
 
 ## Step 1: Create the SharePoint list
 
@@ -66,13 +66,23 @@ Your list should show the supply requests with special column formatting. Notice
 
 k. Save a copy of the list URL somewhere for use in a later step.
 
-## Step 2: Add the list to your Team
+---
+😎 CHOOSING A LIST LOCATION: We could've put the SharePoint list anywhere, but by creating it in the SharePoint site associated with the Team, we can be sure that anyone with permission to the Team can access it. It's also possible to go into SharePoint and open up the permissions if you wanted a particular list to be more widely available.
+
+---
+
+## Step 2: Add the list as a tab in your Team
 
 In this step, you'll add the list you just created to the Emergency Response Team.
 
 a. In the General channel, to the right of the other tabs, click the "+" to add a new tab. Find the "Lists" application and add it.
 
 ![Exercise3](images/Part3-23.png)
+
+---
+⛏️ [MICROSOFT LISTS](https://resources.techcommunity.microsoft.com/microsoft-lists/?WT.mc_id=M365-github-rogerman) is a new way to access SharePoint lists. SharePoint List features such as column formatting, managed metadata, lookup fields, etc. work normally. What's new is the ways to find and access the lists, including a new Lists mobile app. You can access the list data just as you would any SharePoint list: via the Graph API, Power Platform connectors, or SharePoint native APIs.
+
+---
 
 b. Click "Save" to save the tab.
 
@@ -120,6 +130,13 @@ d. Under "Complete these steps," click "Tabs" 1️⃣ and add a Personal tab 2�
 
 ![Exercise3](images/Part3-18b.png)
 
+---
+⛏️ WHY A PERSONAL TAB? Well, personal tabs can be pushed out to users and pinned to the Teams sidebar; you'll do that in the next step. 
+
+In order to build an app with tabs that work in Teams channels and group conversations, you need to create a configuration page. There's a challenge at the end of this exercise if you want to give that a try!
+
+---
+
 Fill in the fields as follows:
 
 * Name: The default tab name (users can always be rename it)
@@ -131,7 +148,7 @@ Don't hit save yet!
 
 ![Exercise3](images/Part3-19.png)
 
-e. You need to modify the content URL before you're done, so if you saved the personal tab, edit it now. The content URL is the one displayed in the Teams app, and the web URL is only displayed if Teams needs to launch a seperate web browser. 
+e. You need to modify the content URL before you're done, so if you saved the personal tab, open it back up for editing now. The content URL is the one displayed in the Teams app, and the web URL is only displayed if Teams needs to launch a seperate web browser. 
 
 The problem is that the Teams app may sometimes fail to log into SharePoint, so we need to modify the content URL to force the login. (SharePoint veterans may appreciate that the tab will fail when SharePoint's FedAuth cookie expires ... remember the FedAuth cookie? It's still around!)
 
@@ -149,9 +166,15 @@ https://m365x175424.sharepoint.com/_layouts/15/teamslogon.aspx?SPFX=true&dest=/s
 
 Now you can save your work.
 
-NOTE: This functionality is in preview and subject to change. [Details are in this article](https://docs.microsoft.com/en-us/sharepoint/dev/features/embed-pages-to-teams).
+---
+⛏️ THIS FUNCTIONALITY IS IN PREVIEW and subject to change. [Details are in this article](https://docs.microsoft.com/en-us/sharepoint/dev/features/embed-pages-to-teams). 
+
+---
+
+
 
 f. Test your app by installing it for your own use. Under "Complete these steps" scroll down and select "Test and distribute" 1️⃣. Then click the "Install" button 2️⃣.
+
 ![Exercise3](images/Part3-20.png)
 
 Notice that the information from your app manifest appears in the dialog box.
@@ -198,16 +221,18 @@ d. Back at the list of setup policies, select the policy you just created and "M
 
 It can take up to 24 hours for the app policy to take effect.
 
+---
+😎 [USER VOICE](https://microsoftteams.uservoice.com/forums/555103-public) is the place to ask for Teams features, or to see what features other people are requesting. Teams engineering really does listen, and may indicate their intent to implement a feature right there in User Voice. Another place to check is the [Microsoft 365 Roadmap](https://www.microsoft.com/microsoft-365/roadmap?filters=&WT.mc_id=M365-github-rogerman), which shows features that are coming soon.
+
+---
+🏁 CHALLENGE: Make your app work in a Teams channel rather than using the Lists app. This requires a configuration page that interacts with users when the tab is added. 
+
+There's a SharePoint web part sample that can make any SharePoint page into a configuration page; [this article explains](https://bob1german.com/2020/01/07/teams-apps-with-sharepoint2/). For your convenience, the web part is already compiled and the SharePoint app package is [here in this repo](../Solution/MapViewerPackages/Exercise%203%20Challenge%20-%20Configurable%20Tab). The next exercise will teach you how to install it!
+
+---
+
+   
 When you're ready, please [proceed to the next section.](Part4.md)
-
-## Challenges
-
-1. Make your app work in a Teams channel (rather than using the Lists app)
-
-   In order to build an app with tabs that work in Teams channels and group conversations, you need to create a configuration page. There's a SharePoint web part sample that does just that, so you can make any SharePoint page into a configuration page.
-
-   Visit the [article which explains](https://bob1german.com/2020/01/07/teams-apps-with-sharepoint2/) and try it out with the Supplies list.
-
 
 
 
