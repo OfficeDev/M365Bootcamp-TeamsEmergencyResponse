@@ -15,7 +15,7 @@ If you don't have developer tools, grab the map-view.sppkg file from the Exercis
 
 a. Open the [Solution/MapViewer](../Solution/MapViewer/) folder in your code editor. 
 
-The [src/webparts/mapView/services/GraphService](../Solution/MapViewer/src/webparts/mapView/services/GraphService) folder contains the Microsoft Graph code for the solution. Open IGraphService.ts and add a function to the IGraphService interface:
+The [src/webparts/mapView/services/GraphService](../Solution/MapViewer/src/webparts/mapViewer/services/GraphService) folder contains the Microsoft Graph code for the solution. Open IGraphService.ts and add a function to the IGraphService interface:
 
 ~~~typescript
 sendToChannel(message: string): Promise<void | string>;
