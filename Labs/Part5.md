@@ -76,7 +76,7 @@ public async sendToChannel(message: string): Promise<void | string> {
 
 The completed file is [here](https://github.com/OfficeDev/M365Bootcamp-TeamsEmergencyResponse/blob/Exercise5/Solution/MapViewer/src/webparts/mapViewer/services/GraphService/GraphService.ts).
 
-c. The [src/webparts/mapView/services/MapDataService](../Solution/MapViewer/src/webparts/mapView/services/MapDataService) folder contains the code that reads and updates map points using the Graph service and the Bing Maps service. Modify .MapDataService[MapDataService.ts](../Solution/MapViewer/src/webparts/mapView/services/MapDataService/MapDataService.ts) to add a call to the new `sendToChannel()` function. Add it to the `getMapPoints()` function just below the call to `updateListItem()`. The updated `getMapPoints()` function should look like this:
+c. The [src/webparts/mapView/services/MapDataService](../Solution/MapViewer/src/webparts/mapViewer/services/MapDataService) folder contains the code that reads and updates map points using the Graph service and the Bing Maps service. Modify .MapDataService[MapDataService.ts](../Solution/MapViewer/src/webparts/mapViewer/services/MapDataService/MapDataService.ts) to add a call to the new `sendToChannel()` function. Add it to the `getMapPoints()` function just below the call to `updateListItem()`. The updated `getMapPoints()` function should look like this:
 
 ~~~typescript
 public async getMapPoints(geocode: boolean): Promise<ILocation[]> {
