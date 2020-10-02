@@ -78,7 +78,7 @@ In either case, your bundle can be found in the MapVewer/sharepoint folder with 
 
 ## Step 2: Upload the SharePoint solution package to the SharePoint App Catalog
 
-a. Return to the SharePoint app catalog. You can review [Exercise 1 Step 3](Part1.md) if you need a reminder on how to get there.
+a. Return to the SharePoint app catalog. You can review [Exercise 1 Step 3](Part1.md#step-3-create-the-sharepoint-app-catalog) if you need a reminder on how to get there.
 
 Within the App Catalog, navigate to "Apps for SharePoint".
 
