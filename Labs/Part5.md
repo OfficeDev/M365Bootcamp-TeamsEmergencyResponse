@@ -8,7 +8,9 @@
  * [Challenges: Ideas for going beyond the lab exercises](Challenges.md)
  * [Resources](Resources.md)
 
-
+![Part4](images/Part5-01.png)
+![Part4](images/Part5-02.png)
+![Part4](images/Part5-03.png)
 
 
 

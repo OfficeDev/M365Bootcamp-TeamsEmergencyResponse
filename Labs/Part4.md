@@ -73,6 +73,23 @@ a. Return to the SharePoint app catalog. You can review [Exercise 1 Step 3](Part
 
 b. Upload the SharePoint solution package (.sppkg file) from Step 1 
 
+![Part4](images/Part4-01.png)
+![Part4](images/Part4-02.png)
+![Part4](images/Part4-03.png)
+![Part4](images/Part4-04.png)
+![Part4](images/Part4-05.png)
+![Part4](images/Part4-06.png)
+![Part4](images/Part4-07.png)
+![Part4](images/Part4-08.png)
+![Part4](images/Part4-09.png)
+![Part4](images/Part4-10.png)
+![Part4](images/Part4-11.png)
+![Part4](images/Part4-12.png)
+![Part4](images/Part4-13.png)
+![Part4](images/Part4-14.png)
+![Part4](images/Part4-15.png)
+![Part4](images/Part4-16.png)
+![Part4](images/Part4-17.png)
 
 
 
