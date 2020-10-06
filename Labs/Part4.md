@@ -8,7 +8,7 @@
  * [Exercise 5: Calling the Microsoft Graph](Part5.md)
  * [Resources](Resources.md)
 
-In this exercise, you will build a map tab that can display trouble spots during an emergency. Tha tab is built as a SharePoint Framework web part, where Sharepoint provides hosting, authentication, and a number of other services. As in Exercise 3, the data is stored in a SharePoint list, but this time the list is accessed using the Microsoft 365 Graph.
+In this exercise, you will build a map tab that can display trouble spots during an emergency. The tab is built as a SharePoint Framework web part, where Sharepoint provides hosting, authentication, and a number of other services. As in Exercise 3, the data is stored in a SharePoint list, but this time the list is accessed using the Microsoft 365 Graph.
 
 ## Before you begin
 
