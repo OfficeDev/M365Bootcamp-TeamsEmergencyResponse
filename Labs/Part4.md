@@ -15,7 +15,9 @@ In this exercise, you will build a map tab that can display trouble spots during
 To complete all the steps in this exercise and the next you will need:
 
  * A computer running a code editor such as Visual Studio Code
- * A computer running [Node.js](https://nodejs.org/en/) [version 10.x.](https://nodejs.org/download/release/latest-dubnium/) to run the development toolchain. (SharePoint Framework only works with Node.js 10.x)
+ * A computer running [Node.js](https://nodejs.org/en/) [version 10.x.](https://nodejs.org/download/release/latest-dubnium/) to run the development toolchain. (SharePoint Framework only works with Node.js 10.x). You can check the node version with the command:
+
+ `node -v`
 
 **If this is impractical for some reason, the completed builds are provided as part of this repository. The instructions include details on how to install the pre-built packages.**
 
@@ -97,7 +99,7 @@ NOTE: If you encounter errors, it may be because your SharePoint app catalog has
 
 ## Step 3: Approve permissions
 
-a. Return to the SharePoint administration page, open the "Advanced" accordian 1️⃣, and click "API access" 2️⃣. In a moment you should see new permissions being requested; these permissions are the ones required for the Microsoft Graph calls used to provision, read, and write a list in SharePoint.
+a. Return to the SharePoint administration page (should still be open in a browser tab), open the "Advanced" accordian 1️⃣, and click "API access" 2️⃣. In a moment you should see new permissions being requested; these permissions are the ones required for the Microsoft Graph calls used to provision, read, and write a list in SharePoint.
 
 Select one of the permission requests 3️⃣ and then click the "Approve" button 4️⃣. Repeat this with the other permission request.
 
@@ -109,9 +111,14 @@ b. Ensure the permissions have been approved as shown.
 
 ## Step 4: Install the app in the Emergency Response Team
 
+---
+😎 NOTE: The Teams package provided contains tokens such as {teamSiteDomain} and {teamSitePath} that are specific to SharePoint Framework. These allow your app to run in the SharePoint site associated with each Team. Check out [manifest.json](../Solution/MapView/teams/manifest.json) to see. This sort of app can be installed into Teams but it's not possible to import it into App Studio or the Teams Toolkit for Visual Studio, since they don't understand the SharePoint Framework tokens.
+
+---
+
 a. Return to Microsoft Teams. Click the elipsis to the right of your Emergency Response Team name (not the channel) 1️⃣ and select "Manage Team" from the menu 2️⃣. Select the "Apps" tab 3️⃣. 
 
-In the lower right corner of the screen, click "Upload a custom app" 4️⃣. Navigate to your local copy of this repository; in the [Solution/MapView/Teams](../Solution/MapView/Teams/) folder, you will find a Teams solution package `MapViewer.zip`. This is the file you need to upload.
+In the lower right corner of the screen, click "Upload a custom app" 4️⃣. Navigate to your local copy of this repository; in the [Solution/MapView/Teams](../Solution/MapView/teams/) folder, you will find a Teams solution package `MapViewer.zip`. This is the file you need to upload.
 
 ![Part4](images/Part4-07.png)
 
