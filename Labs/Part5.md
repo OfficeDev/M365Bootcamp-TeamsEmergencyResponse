@@ -14,9 +14,9 @@ If you don't have developer tools, grab the map-view.sppkg file from the Exercis
 
 ## Step 1: Modify the code
 
-a. Open the [Solution/MapViewer](../Solution/MapViewer/) folder in your code editor. 
+a. Ensure you have downloaded or cloned this repository, and open the [Solution/MapViewer](../Solution/MapViewer/) folder in your code editor.
 
-The [src/webparts/mapView/services/GraphService](../Solution/MapViewer/src/webparts/mapViewer/services/GraphService) folder contains the Microsoft Graph code for the solution. Open IGraphService.ts and add a function to the IGraphService interface:
+The [src/webparts/mapViewer/services/GraphService](../Solution/MapViewer/src/webparts/mapViewer/services/GraphService) folder contains the Microsoft Graph code for the solution. Open IGraphService.ts and add a function to the IGraphService interface:
 
 ~~~typescript
 sendToChannel(message: string): Promise<void | string>;
@@ -77,7 +77,7 @@ public async sendToChannel(message: string): Promise<void | string> {
 
 The completed file is [here](https://github.com/OfficeDev/M365Bootcamp-TeamsEmergencyResponse/blob/Exercise5/Solution/MapViewer/src/webparts/mapViewer/services/GraphService/GraphService.ts).
 
-c. The [src/webparts/mapView/services/MapDataService](../Solution/MapViewer/src/webparts/mapViewer/services/MapDataService) folder contains the code that reads and updates map points using the Graph service and the Bing Maps service. Modify .MapDataService[MapDataService.ts](../Solution/MapViewer/src/webparts/mapViewer/services/MapDataService/MapDataService.ts) to add a call to the new `sendToChannel()` function. Add it to the `getMapPoints()` function just below the call to `updateListItem()`. The updated `getMapPoints()` function should look like this:
+c. The [src/webparts/mapViewer/services/MapDataService](../Solution/MapViewer/src/webparts/mapViewer/services/MapDataService) folder contains the code that reads and updates map points using the Graph service and the Bing Maps service. Modify .MapDataService[MapDataService.ts](../Solution/MapViewer/src/webparts/mapViewer/services/MapDataService/MapDataService.ts) to add a call to the new `sendToChannel()` function. Add it to the `getMapPoints()` function just below the call to `updateListItem()`. The updated `getMapPoints()` function should look like this:
 
 ~~~typescript
 public async getMapPoints(geocode: boolean): Promise<ILocation[]> {
@@ -151,6 +151,8 @@ d. We're going to need permission to use the Graph API to post in the Teams chan
 The completed file is [here](https://github.com/OfficeDev/M365Bootcamp-TeamsEmergencyResponse/blob/Exercise5/Solution/MapViewer/config/package-solution.json).
 
 ## Step 2: Rebuild the SharePoint solution package
+
+This assumes you already built the package as explained in Exercise 4 Step 1.
 
 a. If you're running locally, you can make simple code changes without re-deploying the SharePoint solution package, but in this case we added a permission request so it's time to rebuild the package.
 
