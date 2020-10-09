@@ -135,7 +135,7 @@ c. Next the tab confirugration page will come up; click "Save".
 
 ---
 
-d. The tab will open but initially the map won't work because it requires a Bing Maps key. You can get a free Bing Maps key at the [Bing Maps Get Started](https://www.microsoft.com/en-us/maps/create-a-bing-maps-key) page. If you are taking a live workshop, your instructor may be able to provide you with a temporary Bing Maps key.
+d. The tab will open but initially the map won't work because it requires a Bing Maps key. You can get a free Bing Maps key at the [Bing Maps Get Started](https://www.microsoft.com/en-us/maps/create-a-bing-maps-key) page or follow the [detailed instructions here](./BingSetup.md). If you are taking a live workshop, your instructor may be able to provide you with a temporary Bing Maps key.
 
 Enter the Bing Maps key into the property panel 1️⃣ and decide if you want an aerial or road map 2️⃣. The web part will create a list to store the points on the map; you can choose a different list name if you wish 3️⃣. When you're done click "Apply" 4️⃣.
 
