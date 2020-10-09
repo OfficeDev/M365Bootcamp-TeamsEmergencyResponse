@@ -40,19 +40,17 @@ g. Under column formatting, paste in the JSON 1️⃣ from the [location.json](.
 
 ![Exercise3](images/Part3-07.png)
 
-h. Repeat the process for additional columns as follows:
+h. Repeat the process for additional columns as follows. Note that for some of the columns you'll need to click "Advanced mode" to get to the JSON. Also, when you're adding the choices to the Supplies column, pay attention to exact spelling and upper/lower case or the formatting won't work correctly.
 
 | Column name | Column type | Formatting JSON |
 |---|---|---|
 | Contact | Person | [contact.json](../Solution/Column%20samples/contact.json) |
-| Supplies | Choice of: Food, Water, Flashlight, Pet supplies, Medicine (Allow multiple selections. Spelling and upper/lower case must match exactly for formatting to work) | [supplies.json](../Solution/Column%20samples/supplies.json) |
+| Supplies | Choice of: Food, Water, Flashlight, Pet supplies, Medicine (Allow multiple selections, which is hidden under "more options") | [supplies.json](../Solution/Column%20samples/supplies.json) |
 | Comments | Multi-line text | none |
-
-Note that for some of the columns you'll need to click "Advanced mode" to get to the JSON.
 
 ![Exercise3](images/Part3-08.png)
 
-i. Click the drop-down on any of the columns and select "Show/Hide columns". De-select the Title column 1️⃣, and reorder the columns as you wish 2️⃣. Then click "Apply" 3️⃣ to update the default view of the list.
+i. Click the drop-down on any of the columns, under "Column settings" select "Show/Hide columns". De-select the Title column 1️⃣, and reorder the columns as you wish 2️⃣. Then click "Apply" 3️⃣ to update the default view of the list.
 
 ![Exercise3](images/Part3-10.png)
 
@@ -98,7 +96,7 @@ e. Your list will be displayed as a tab. Feel free to rename the columns or drag
 
 ![Exercise3](images/Part3-27.png)
 
-## Step 3 - Create a real Teams application using App Studio
+## Step 3 - Create a real Teams application using App Studio (Optional)
 
 In Step 2 you succeeded in making the list available to the Team, but you didn't actually create a Teams app, you used the Lists app. What if you wanted to make the supplies application available to people outside the Emergency Response Teams? What if you wanted to pin it to the left sidebar for the workers who should have it?
 
@@ -113,16 +111,17 @@ b. Go to the "Manifest editor" tab in App Studio 1️⃣ and create a new app 2�
 ![Exercise3](images/Part3-15.png)
 
 
-c. Fill in the app details
-
-![Exercise3](images/Part3-16.png)
+c. Fill in the app details:
 
  * Give your app a short name and a full name
  * Press the "Generate" button to generate a unique ID for your app
  * Choose a unique package name. A good practice is to use a DNS domain name you own in the name to ensure uniqueness.
  * Enter short and long descriptions that will be displayed in the app's About tab
  * Enter the developer information that will be displayed in the app's About page. The website, privacy, and terms of use URLs must begin with https://.
- * Upload icons for your app. You can get suitable icons in this repository in the [Solution/Column samples](../Solution/Column%20samples) directory. If you want an accent color that matches the icons, use #20007d.
+
+![Exercise3](images/Part3-16.png)
+
+Scroll down and upload icons for your app. You can get suitable icons in this repository in the [Solution/Column samples](../Solution/Column%20samples) directory. If you want an accent color that matches the icons, use #20007d.
 
 ![Exercise3](images/Part3-18.png)
 
@@ -137,31 +136,29 @@ In order to build an app with tabs that work in Teams channels and group convers
 
 ---
 
-Fill in the fields as follows:
+Fill in the fields as follows **(don't click "save" yet)**:
 
 * Name: The default tab name (users can always be rename it)
 * Entity ID: A unique identifier within your app. This can be used to pass context to your tab, but in this case we don't need that.
 * Content URL: Paste in the list URL you saved in step 1k; you can remove everything after AllItems.aspx.
 * Web URL: Paste in the list URL you saved in 1k, again removing anything after AllItems.aspx.
 
-Don't hit save yet!
+e. You need to modify the content URL before you're done, so if you saved the personal tab, open it back up for editing now. The content URL is the one displayed in the Teams app, and the web URL is only displayed if Teams needs to launch a seperate web browser. 
 
 ![Exercise3](images/Part3-19.png)
-
-e. You need to modify the content URL before you're done, so if you saved the personal tab, open it back up for editing now. The content URL is the one displayed in the Teams app, and the web URL is only displayed if Teams needs to launch a seperate web browser. 
 
 The problem is that the Teams app may sometimes fail to log into SharePoint, so we need to modify the content URL to force the login. (SharePoint veterans may appreciate that the tab will fail when SharePoint's FedAuth cookie expires ... remember the FedAuth cookie? It's still around!)
 
 You need to insert `/_layouts/15/teamslogon.aspx?SPFX=true&dest=` into the URL right after the host name. So, for example, if your list URL is
 
 ~~~ text
-https://m365x123456.sharepoint.com/sites/EmergencyResponse/Lists/SuppliesNeeded/AllItems.aspx
+https://<your-tenant>.sharepoint.com/sites/EmergencyResponse/Lists/SuppliesNeeded/AllItems.aspx
 ~~~
 
 the content URL should be
 
 ~~~ text
-https://m365x175424.sharepoint.com/_layouts/15/teamslogon.aspx?SPFX=true&dest=/sites/EmergencyResponse/Lists/SuppliesNeeded/AllItems.aspx
+https://<your-tenant>.sharepoint.com/_layouts/15/teamslogon.aspx?SPFX=true&dest=/sites/EmergencyResponse/Lists/SuppliesNeeded/AllItems.aspx
 ~~~
 
 Now you can save your work.
@@ -185,9 +182,9 @@ g. The app should open and you can view and edit the supplies list. If you right
 
 ![Exercise3](images/Part3-22.png)
 
-## Step 4: Install and pin the app using App Policies
+## Step 4: Install and pin the app using App Policies (Optional, depends on Step 3)
 
-a. Re-open App Studio, which will be under the elipsis in the Teams sidebar 1️⃣. Edit the your app manifest 2️⃣ and return to the "Test and distribute" task 3️⃣. This time, click Download 4️⃣ and save a copy of the application package (.zip file) on your computer.
+a. Re-open App Studio, which will be under the elipsis in the Teams sidebar 1️⃣. Open the Manifest tab 2️⃣ and re-open the previously added Supplies app. Select the "Test and distribute" task 3️⃣. This time, click Download 4️⃣ and save a copy of the application package (.zip file) on your computer.
 
 ![Exercise3](images/Part3-30.png)
 
@@ -197,7 +194,7 @@ b. Click Apps in the Teams sidebar 1️⃣, then click "Upload a custom app" 2�
 
 ![Exercise3](images/Part3-31.png)
 
-Now when you click the "Built for (tenant name)" link, your app will be listed.
+Now when you click the "Built for (tenant name)" link, your app will be listed. (You may just see the tenant name without "Built for".)
 
 ![Exercise3](images/Part3-32.png)
 
@@ -209,7 +206,7 @@ Give your policy a name 1️⃣ and click "Add apps" 2️⃣ to install an app f
 
 ![Exercise3](images/Part3-34.png)
 
-Search for the Supplies app 1️⃣ and click or hover over the name 2️⃣ when it pops up. This will make an "Add" button 3️⃣appear; click it and then click "Save" 4️⃣.
+Search for the Supplies app 1️⃣ and click or hover over the name 2️⃣ when it pops up. This will make an "Add" button 3️⃣appear; click it 4️⃣. Back on the policy page, click "Save" to save your work.
 
 ![Exercise3](images/Part3-35.png)
 

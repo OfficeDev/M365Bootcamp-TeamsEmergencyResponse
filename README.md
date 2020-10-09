@@ -37,6 +37,10 @@ To complete the hands-on portion of the lab, you will need:
 
 There are a lot of screen shots, which always appear _after_ the written instruction they refer to. Call-outs in the screen shots are referenced in the text using keycaps ( 1️⃣, 2️⃣, etc.)
 
+If you're viewing these instructions in a web browser, note that none of the links open in a new tab, so if you want to view some source code you may want to right click and open the new tab so you don't lose your place.
+
+If you're viewing these instructions in Teams, links to source code will actually download the file in question. Consider downloading the whole repo and editing it locally.
+
 The documentation includes some asides that can safely be skipped when following a list of instructions:
 
 ---

@@ -35,7 +35,7 @@ a. Still in the General channel, click the elipsis in the upper right corner 1�
 
 ![SharePoint Connector](images/Part2-SPConnector06.png)
 
-b. This will bring you into the SharePoint site that's associated with this Team, viewing the file folder for the channel. Navigate to the Home page.
+b. This will bring you into the SharePoint site that's associated with this Team, viewing the file folder for the channel. You may need to log in if this is the first time opening SharePoint in your new tenant. Navigate to the Home page.
 
 ![SharePoint Connector](images/Part2-SPConnector07.png)
 
@@ -43,7 +43,18 @@ c. On the home page under News, click Add. Add one News Post and one News Link.
 
 ![SharePoint Connector](images/Part2-SPConnector08.png)
 
-When you create the News Post, search for a stock image that conveys an emergency. For the News Link, search the Internet for a news story about an emergency and paste the URL.
+If you're not sure what page template to use, just select the Blank one 1️⃣ and then click "Create page"2️⃣.
+
+![SharePointNews](images/NewsHeading1.png)
+
+You can set the heading image by clicking on the image icon to the left of the gray banner. 
+
+![SharePointNews](images/NewsHeading2.png)
+
+Search for a stock image that conveys an emergency. Notice that you can move the image around by dragging the circle in the middle. Add some text and click "Post news" to publish your news article.
+
+
+Now create a News Link; search the Internet for a news story about an emergency and paste the URL. In the end, your home page should show both news items front and center.
 
 ![SharePoint Connector](images/Part2-SPConnector09.png)
 
@@ -62,11 +73,11 @@ b. Find the SharePoint tab and add it to the channel.
 
 ![SharePoint Connector](images/Part2-SPConnector11.png)
 
-c. Be sure you select the default SharePoint site 1️⃣ and click the Home page 2️⃣ to select it. Click Save 3️⃣ and view your news page.
+c. Be sure you select the default SharePoint site 1️⃣ and click the Home page 2️⃣ to select it. Click Save 3️⃣ and view your news page. Your page may lookt a little different than the screen shot; just make sure you choose the Home page and not one of the individual news stories.
 
 ![SharePoint Connector](images/Part2-SPConnector12.png)
 
-d. Rename the tab "News" and drag it to the left of the wiki tab.
+d. Rename the tab to "News" and drag it to the left of the wiki tab.
 
 ![SharePoint Connector](images/Part2-SPConnector13.png)
 
