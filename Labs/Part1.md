@@ -78,7 +78,7 @@ By default, end users can't upload Teams applications directly; instead an admin
 
 This one can take up to 30 minutes to take effect, so again we want to get it done right away.
 
- a. Return to the Microsoft 365 admin center; this time click "SharePoint" to go to the SharePoint admin center.
+ a. Return to the Microsoft 365 admin center (Teams admin probably opened in a new browser tab, so it may already be open). This time click "SharePoint" to go to the SharePoint admin center. You'll have to log in again the first time.
 
  ![M365 admin](images/Part1-M365Admin3.png)
 
@@ -100,7 +100,7 @@ This one can take up to 30 minutes to take effect, so again we want to get it do
 
   * 1️⃣ Set the title to "Catalog"
   * 2️⃣ Don't change the host name or managed path of the Web Site address, but do complete the address with "catalog"
-  * 3️⃣ Make yourself the administrator of the app catalog by typing "Admin" and click the small person icon
+  * 3️⃣ Make yourself the administrator of the app catalog by typing your tenant administration username and click the person icon
   * 4️⃣ Server resource quota is obsolete; you can leave it or set it to zero
 
   Click OK to create the app catalog.
@@ -114,7 +114,7 @@ This one can take up to 30 minutes to take effect, so again we want to get it do
 
  ## Step 4: Create the Team
 
- a. Browse to [https://teams.microsoft.com](https://teams.microsoft.com) log in if you're prompted. These exercises assume you're using the web client, so click "Use the web client instead".
+ a. Browse to [https://teams.microsoft.com](https://teams.microsoft.com) and log in if you're prompted. These exercises assume you're using the web client, so click "Use the web client instead".
 
  ![Teams](images/Part1-Teams1.png)
 
@@ -141,6 +141,6 @@ This one can take up to 30 minutes to take effect, so again we want to get it do
 
  -----
 
- f. Click the Files tab in the General channel. You may get a message saying it's not ready yet; that's because the SharePoint site doesn't get provisioned until it's first used. You have just initiated the provisioning, and it will save you waiting a few minutes in the next exercise.
+ f. Click the Files tab at the top of the General channel. You may get a message saying it's not ready yet; that's because the SharePoint site doesn't get provisioned until it's first used. You have just initiated the provisioning, and it will save you waiting a few minutes in the next exercise.
 
 When you're ready, please [proceed to the next section.](Part2.md)
