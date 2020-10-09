@@ -29,18 +29,17 @@ nvm list              # List the installed versions
 nvm use (version)     # Switch to the specified Node version
 ~~~
 
-Once you've installed a supported version of Node, installing the rest of the SharePoint Framework toolchain is easy. You can follow [these detailed instructions](https://docs.microsoft.com/sharepoint/dev/spfx/set-up-your-development-environment?WT.mc_id=M365-github-rogerman), or run just these Node commands:
+Once you've installed a supported version of Node, you'll need the `gulp` task runner to build it. Install `gulp` with this command:
 
 ~~~bash
-npm install gulp yo @microsoft/generator-sharepoint --global
-gulp trust-dev-cert
+npm install gulp --global
 ~~~
 
----
-⛏️ SHAREPOINT FRAMEWORK REQUIRES HTTPS. The `gulp trust-dev-cert` command adds the SharePoint Framework's local SSL certificate to your certificate store so you can test your solutions with the JavaScript bundle running locally.
+If you just want to build this one project, skip to step 1. If you'd like the ability to create new SharePoint Framework projects in the future, you can follow [these detailed instructions](https://docs.microsoft.com/sharepoint/dev/spfx/set-up-your-development-environment?WT.mc_id=M365-github-rogerman), or run just this additional Node command to install `yeoman` and the SharePoint yeoman genrator:
 
-
----
+~~~bash
+npm install yo @microsoft/generator-sharepoint --global
+~~~
 
 ## Step 1: Download and build the project
 
@@ -52,7 +51,7 @@ b. To view the source code, open the [project folder (Solution/MapViewer)](../So
 
 c. If you don't have developer tools installed, you can find the finished solution package in the [Solution/MapViewerPackages/Exercise 4](../Solution/MapViewerPackages/Exercise%204) folder. Download the map-viewer.sppkg file and skip to Step 2.
 
-If you do have developer tools installed, open a command line program and and browse to the MapViewer folder. 
+If you do have developer tools installed, open a terminal (command line) and and browse to the MapViewer folder; you should be in the same folder with the `package.json` file. 
 
 Install the needed Node.js packages using this command:
 
@@ -63,12 +62,15 @@ npm install
 OPTION 1: If you want to run from a local web server so you don't have to upload your changes each time you make a change, run these commands:
 
 ~~~bash
+gulp trust-dev-cert
 gulp bundle
 gulp package-solution
 gulp serve --nobrowser
 ~~~
 
-That last command starts a local web server at https://localhost:4321; and the SharePoint package points to that URL instead of a CDN so be sure leave it running.
+The `gulp trust-dev-cert` command only needs to be run the first time you do this; it installs an SSL certificate for local debugging.
+
+The `gulp serve` command starts a local web server at https://localhost:4321; and the SharePoint package points to that URL instead of a CDN so be sure leave it running.
 
 OPTION 2: If you want to upload your JavaScript bundle to the SharePoint public CDN so it will work away from your development computer, run these commands:
 
@@ -77,7 +79,7 @@ gulp bundle --ship
 gulp package-solution --ship
 ~~~
 
-In either case, your bundle can be found in the MapVewer/sharepoint folder with the name `map-viewer.sppkg`.
+In either case, your bundle can be found in the MapVewer/sharepoint/solution folder with the name `map-viewer.sppkg`.
 
 ## Step 2: Upload the SharePoint solution package to the SharePoint App Catalog
 
@@ -118,7 +120,7 @@ b. Ensure the permissions have been approved as shown.
 
 a. Return to Microsoft Teams. Click the elipsis to the right of your Emergency Response Team name (not the channel) 1️⃣ and select "Manage Team" from the menu 2️⃣. Select the "Apps" tab 3️⃣. 
 
-In the lower right corner of the screen, click "Upload a custom app" 4️⃣. Navigate to your local copy of this repository; in the [Solution/MapView/Teams](../Solution/MapView/teams/) folder, you will find a Teams solution package `MapViewer.zip`. This is the file you need to upload.
+In the lower right corner of the screen, click "Upload a custom app" 4️⃣. Navigate to your local copy of this repository; in the [Solution/MapViewer/Teams](../Solution/MapViewer/teams/) folder, you will find a Teams solution package `MapViewer.zip`. This is the file you need to upload.
 
 ![Part4](images/Part4-07.png)
 
@@ -126,7 +128,7 @@ b. The app summary page will come up; just click "Add".
 
 ![Part4](images/Part4-08.png)
 
-c. Next the tab confirugration page will come up; click "Save".
+c. Now return to the General channel and click the "+" to the right of the other tabs to add a new one. Select the Mapvewer application. The tab configuration page will come up; click "Save".
 
 ![Part4](images/Part4-09.png)
 

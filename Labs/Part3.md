@@ -96,7 +96,7 @@ e. Your list will be displayed as a tab. Feel free to rename the columns or drag
 
 ![Exercise3](images/Part3-27.png)
 
-## Step 3 - Create a real Teams application using App Studio
+## Step 3 - Create a real Teams application using App Studio (Optional)
 
 In Step 2 you succeeded in making the list available to the Team, but you didn't actually create a Teams app, you used the Lists app. What if you wanted to make the supplies application available to people outside the Emergency Response Teams? What if you wanted to pin it to the left sidebar for the workers who should have it?
 
@@ -136,7 +136,7 @@ In order to build an app with tabs that work in Teams channels and group convers
 
 ---
 
-Fill in the fields as follows (don't click "save" yet):
+Fill in the fields as follows **(don't click "save" yet)**:
 
 * Name: The default tab name (users can always be rename it)
 * Entity ID: A unique identifier within your app. This can be used to pass context to your tab, but in this case we don't need that.
@@ -152,13 +152,13 @@ The problem is that the Teams app may sometimes fail to log into SharePoint, so 
 You need to insert `/_layouts/15/teamslogon.aspx?SPFX=true&dest=` into the URL right after the host name. So, for example, if your list URL is
 
 ~~~ text
-https://m365x123456.sharepoint.com/sites/EmergencyResponse/Lists/SuppliesNeeded/AllItems.aspx
+https://<your-tenant>.sharepoint.com/sites/EmergencyResponse/Lists/SuppliesNeeded/AllItems.aspx
 ~~~
 
 the content URL should be
 
 ~~~ text
-https://m365x175424.sharepoint.com/_layouts/15/teamslogon.aspx?SPFX=true&dest=/sites/EmergencyResponse/Lists/SuppliesNeeded/AllItems.aspx
+https://<your-tenant>.sharepoint.com/_layouts/15/teamslogon.aspx?SPFX=true&dest=/sites/EmergencyResponse/Lists/SuppliesNeeded/AllItems.aspx
 ~~~
 
 Now you can save your work.
@@ -182,7 +182,7 @@ g. The app should open and you can view and edit the supplies list. If you right
 
 ![Exercise3](images/Part3-22.png)
 
-## Step 4: Install and pin the app using App Policies
+## Step 4: Install and pin the app using App Policies (Optional, depends on Step 3)
 
 a. Re-open App Studio, which will be under the elipsis in the Teams sidebar 1️⃣. Open the Manifest tab 2️⃣ and re-open the previously added Supplies app. Select the "Test and distribute" task 3️⃣. This time, click Download 4️⃣ and save a copy of the application package (.zip file) on your computer.
 
