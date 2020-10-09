@@ -77,7 +77,7 @@ public async sendToChannel(message: string): Promise<void | string> {
 
 The completed file is [here](https://github.com/OfficeDev/M365Bootcamp-TeamsEmergencyResponse/blob/Exercise5/Solution/MapViewer/src/webparts/mapViewer/services/GraphService/GraphService.ts).
 
-c. The [src/webparts/mapViewer/services/MapDataService](../Solution/MapViewer/src/webparts/mapViewer/services/MapDataService) folder contains the code that reads and updates map points using the Graph service and the Bing Maps service. Modify .MapDataService[MapDataService.ts](../Solution/MapViewer/src/webparts/mapViewer/services/MapDataService/MapDataService.ts) to add a call to the new `sendToChannel()` function. Add it to the `getMapPoints()` function just below the call to `updateListItem()`. The updated `getMapPoints()` function should look like this:
+c. The [src/webparts/mapViewer/services/MapDataService](../Solution/MapViewer/src/webparts/mapViewer/services/MapDataService) folder contains the code that reads and updates map points using the Graph service and the Bing Maps service. Modify [MapDataService.ts](../Solution/MapViewer/src/webparts/mapViewer/services/MapDataService/MapDataService.ts) to add a call to the new `sendToChannel()` function. Add it to the `getMapPoints()` function just below the call to `updateListItem()`. The updated `getMapPoints()` function should look like this:
 
 ~~~typescript
 public async getMapPoints(geocode: boolean): Promise<ILocation[]> {
@@ -179,6 +179,12 @@ b. Return to the API Access screen; you should see the new permission . Select i
 ![Part4](images/Part5-01.png)
 
 ## Step 4: Test the change
+
+a. If you're running locally (you chose Option 1 in Exercise 4), ensure your local web server is running in the terminal window. If not, start it again.
+
+~~~bash
+gulp serve --nobrowser
+~~~
 
 a. Return to Microsoft Teams and refresh the Map View tab. Add a new point to the map; a notification should appear in the channel.
 
