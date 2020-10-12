@@ -59,6 +59,11 @@ Install the needed Node.js packages using this command:
 npm install
 ~~~
 
+---
+⛏️ If you're working on macOS, and haven't worked with SharePoint Framework before, there is a chance that you will be prompted to install Xcode command line tools or you will see an error stating that Xcode command line tools are not installed. To setup Xcode command line tools on your machine, follow the steps outlined at [https://medium.com/flawless-app-stories/gyp-no-xcode-or-clt-version-detected-macos-catalina-anansewaa-38b536389e8d](https://medium.com/flawless-app-stories/gyp-no-xcode-or-clt-version-detected-macos-catalina-anansewaa-38b536389e8d). If downloading Xcode command tools using the update manager fails, you can download them directly from [https://developer.apple.com/download/more/?&name=for%20Xcode](https://developer.apple.com/download/more/?&name=for%20Xcode).
+
+---
+
 OPTION 1: If you want to run from a local web server so you don't have to upload your changes each time you make a change, run these commands:
 
 ~~~bash
