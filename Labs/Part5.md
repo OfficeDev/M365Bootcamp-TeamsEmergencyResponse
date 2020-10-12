@@ -211,4 +211,4 @@ a. Return to Microsoft Teams and refresh the Map View tab. Add a new point to th
 
 ![Part4](images/Part5-03.png)
 
-Congratulations, you've completed all 5 parts of the workshop! Please check out [these resources](./Resourcs.md) and thanks for your interest in Microsoft 365 development!
+Congratulations, you've completed all 5 parts of the workshop! Please check out [these resources](./Resources.md) and thanks for your interest in Microsoft 365 development!
