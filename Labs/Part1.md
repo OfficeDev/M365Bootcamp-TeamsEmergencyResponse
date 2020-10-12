@@ -68,7 +68,7 @@ By default, end users can't upload Teams applications directly; instead an admin
 
   ![Teams admin](images/Part1-TeamsAdmin1.png)
 
- c. Ensure the first switch, "Upload custom apps" is turned On.
+ c. Ensure the first switch, "Upload custom apps" is turned On. Then, scroll down and click "Save".
 
  ![Teams admin](images/Part1-TeamsAdmin2.png)
 
