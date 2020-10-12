@@ -50,6 +50,9 @@ export default class MapDataService implements IMapDataService {
                                 longitude: p.longitude
                             }
                         );
+                        /* 
+                         * Add the call to sendToChannel() here 
+                         */
                     }
                 }
             }

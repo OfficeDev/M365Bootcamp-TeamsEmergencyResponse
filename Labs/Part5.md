@@ -77,7 +77,24 @@ public async sendToChannel(message: string): Promise<void | string> {
 
 The completed file is [here](https://github.com/OfficeDev/M365Bootcamp-TeamsEmergencyResponse/blob/Exercise5/Solution/MapViewer/src/webparts/mapViewer/services/GraphService/GraphService.ts).
 
-c. The [src/webparts/mapViewer/services/MapDataService](../Solution/MapViewer/src/webparts/mapViewer/services/MapDataService) folder contains the code that reads and updates map points using the Graph service and the Bing Maps service. Modify [MapDataService.ts](../Solution/MapViewer/src/webparts/mapViewer/services/MapDataService/MapDataService.ts) to add a call to the new `sendToChannel()` function. Add it to the `getMapPoints()` function just below the call to `updateListItem()`. The updated `getMapPoints()` function should look like this:
+c. The [src/webparts/mapViewer/services/MapDataService](../Solution/MapViewer/src/webparts/mapViewer/services/MapDataService) folder contains the code that reads and updates map points using the Graph service and the Bing Maps service. Modify [MapDataService.ts](../Solution/MapViewer/src/webparts/mapViewer/services/MapDataService/MapDataService.ts) to add a call to the new `sendToChannel()` function. Add it to the `getMapPoints()` function 
+where you see the comment,
+
+~~~typescript
+/* 
+ * Add the call to sendToChannel() here 
+ */
+~~~
+
+Here is the snippet of code to add:
+
+~~~typescript
+await this.serviceProps.graphService.sendToChannel(
+    `New point ${p.title} added at ${p.latitude}, ${p.longitude}`
+);
+~~~
+
+The updated `getMapPoints()` function should look like this:
 
 ~~~typescript
 public async getMapPoints(geocode: boolean): Promise<ILocation[]> {
@@ -172,7 +189,11 @@ gulp package-solution --ship
 
 ## Step 3: Re-deploy the SharePoint solution package and approve permissions
 
+You need to repeat steps 2 and 3 of Exercise 4 to update your work in SharePoint.
+
 a. Return to the SharePoint App catalog and upload the map-viewer.sppkg file again.
+
+![Part4](images/Part4-03.png)
 
 b. Return to the API Access screen; you should see the new permission . Select it 1️⃣ and click Approve 2️⃣. 
 
@@ -190,4 +211,4 @@ a. Return to Microsoft Teams and refresh the Map View tab. Add a new point to th
 
 ![Part4](images/Part5-03.png)
 
-Congratulations, you've completed all 5 parts of the workshop! Please check out [these resources](Resourcs.md) and thanks for your interest in Microsoft 365 development!
+Congratulations, you've completed all 5 parts of the workshop! Please check out [these resources](./Resourcs.md) and thanks for your interest in Microsoft 365 development!

@@ -77,6 +77,8 @@ The `gulp trust-dev-cert` command only needs to be run the first time you do thi
 
 The `gulp serve` command starts a local web server at https://localhost:4321; and the SharePoint package points to that URL instead of a CDN so be sure leave it running.
 
+> NOTE: If you get an error running these commands, please check to be sure you're using Node version 10 as mentioned in Exercise 1. You can type `node -v` to determine what version you are using.
+
 OPTION 2: If you want to upload your JavaScript bundle to the SharePoint public CDN so it will work away from your development computer, run these commands:
 
 ~~~bash
@@ -107,6 +109,8 @@ NOTE: If you encounter errors, it may be because your SharePoint app catalog has
 ## Step 3: Approve permissions
 
 a. Return to the SharePoint administration page (should still be open in a browser tab), open the "Advanced" accordian 1️⃣, and click "API access" 2️⃣. In a moment you should see new permissions being requested; these permissions are the ones required for the Microsoft Graph calls used to provision, read, and write a list in SharePoint.
+
+> NOTE: It may take a couple minutes for your application to appear on the API Access screen.
 
 Select one of the permission requests 3️⃣ and then click the "Approve" button 4️⃣. Repeat this with the other permission request.
 
@@ -157,9 +161,9 @@ Don't forget to close the configuration panel.
 
 ---
 
-e. Click the "Edit points" button to add some points to the map. This will open the SharePoint list in a Teams Task Module, which is just an IFrame disguised as a modal dialog box. Using the list user interface saves writing code to manage the points on the map.
+e. Click the "Edit pushpins" button to add some points to the map. This will open the SharePoint list in a Teams Task Module, which is just an IFrame disguised as a modal dialog box. Using the list user interface saves writing code to manage the points on the map.
 
-Create each new point by clicking the New button 1️⃣. Enter a title and subtitle to be displayed, as well as the street address of the location you want to highlight 2️⃣. Often you can enter the name of an attraction in place of an address.
+Create each new point by clicking the New button 1️⃣. Enter a title and subtitle to be displayed, as well as the street address of the location you want to highlight 2️⃣. Often you can enter the name of an attraction in place of an address. Be sure you cliock the "Save" button after entering each item.
 
 ![Part4](images/Part4-12.png)
 
