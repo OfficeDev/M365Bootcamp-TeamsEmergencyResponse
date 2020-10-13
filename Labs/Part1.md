@@ -22,11 +22,11 @@ Log in with any Microsoft personal or work and school account, enter your inform
 
 ![Signup](./images/Signup-02.png)
 
-You will be presented with a number of check boxes about your development interests; check what you like and then select **Next** again. On the final screen, enter a username, domain name, and password. The domain name you choose is just the left-most portion - for example if you enter "Contoso" your domain will be "Contoso.onmicrosoft.com".
+You will be presented with a number of check boxes about your development interests; check what you like and then select **Next** again. On the final screen, enter a username, domain name, and password. The domain name you choose is just the left-most portion - for example if you enter `Contoso` your domain will be `Contoso.onmicrosoft.com`.
 
 ![Signup](./images/Signup-03.png)
 
-Remember this information as you'll need it throughout the labs! You will log in as <username>@<domain>.onmicrosoft.com with the password your chose. You'll be prompted for your phone number  and then the system will set up your subscription.
+Remember this information as you'll need it throughout the labs! You will log in as `<username>@<domain>.onmicrosoft.com` with the password your chose. You'll be prompted for your phone number  and then the system will set up your subscription.
 
 ![Signup](./images/Signup-04.png)
 
@@ -101,7 +101,7 @@ This one can take up to 30 minutes to take effect, so again we want to get it do
  On the **Create App Catalog Site Collection** screen,
 
   * 1️⃣ Set the **Title** to **Catalog**
-  * 2️⃣ Don't change the host name or managed path of the **Web Site address**, but do complete the address with **catalog**
+  * 2️⃣ Don't change the host name or managed path of the **Web Site address**, but do complete the address with `catalog`
   * 3️⃣ Make yourself the **Administrator** of the app catalog by typing your tenant administration username and select the person icon to verify that you entered a valid user name.
   * 4️⃣ **Server Resource Quota** is obsolete; you can leave it or set it to zero
 
@@ -140,8 +140,7 @@ This one can take up to 30 minutes to take effect, so again we want to get it do
 
 ---
 > 😎 TEST USERS: Always test your code with a non-admin user. Your tenant has 25 E5 licenses, use them to create various personas who have different permissions, and test with them!
-
- -----
+---
 
  f. At the top of the **General** channel, select the **Files** tab. You may get a message saying it's not ready yet; that's because the SharePoint site doesn't get provisioned until it is first used. You have just initiated the provisioning, and it will save you waiting a few minutes in the next exercise.
 
