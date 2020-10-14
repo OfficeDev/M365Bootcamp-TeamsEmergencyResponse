@@ -73,7 +73,7 @@ b. Find the SharePoint tab and add it to the channel.
 
 ![SharePoint Connector](images/Part2-SPConnector11.png)
 
-c. Be sure you select the default SharePoint site 1️⃣ and click the Home page 2️⃣ to select it. Click Save 3️⃣ and view your news page. Your page may lookt a little different than the screen shot; just make sure you choose the Home page and not one of the individual news stories.
+c. Be sure you select the default SharePoint site 1️⃣ and click the Home page 2️⃣ to select it. Click Save 3️⃣ and view your news page. Your page may look a little different than the screen shot; just make sure you choose the Home page and not one of the individual news stories.
 
 ![SharePoint Connector](images/Part2-SPConnector12.png)
 
