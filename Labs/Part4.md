@@ -75,7 +75,7 @@ gulp serve --nobrowser
 
 The `gulp trust-dev-cert` command only needs to be run the first time you do this; it installs an SSL certificate for local debugging.
 
-The `gulp serve` command starts a local web server at https://localhost:4321; and the SharePoint package points to that URL instead of a CDN so be sure leave it running.
+The `gulp serve` command starts a local web server at https://localhost:4321; and the SharePoint package points to that URL instead of a CDN so be sure to leave it running.
 
 > NOTE: If you get an error running these commands, please check to be sure you're using Node version 10 as mentioned in Exercise 1. You can type `node -v` to determine what version you are using.
 
