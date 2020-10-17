@@ -35,7 +35,9 @@ Once you've installed a supported version of Node, you'll need the `gulp` task r
 npm install gulp --global
 ~~~
 
-If you just want to build this one project, skip to step 1. If you'd like the ability to create new SharePoint Framework projects in the future, you can follow [these detailed instructions](https://docs.microsoft.com/sharepoint/dev/spfx/set-up-your-development-environment?WT.mc_id=M365-github-rogerman), or run just this additional Node command to install `yeoman` and the SharePoint yeoman generator:
+*🍎 Note: If you're using MacOS and getting an error while trying to install gulp, you probably need to download and install XCode Command Line Tool first. Go to [developer.apple.com/download/more/](https://developer.apple.com/download/more/) and look for "Command Line Tools".*
+
+If you just want to build this one project, skip to step 1. If you'd like the ability to create new SharePoint Framework projects in the future, you can follow [these detailed instructions](https://docs.microsoft.com/sharepoint/dev/spfx/set-up-your-development-environment?WT.mc_id=M365-github-rogerman), or run just this additional Node command to install `yeoman` and the SharePoint yeoman genrator:
 
 ~~~bash
 npm install yo @microsoft/generator-sharepoint --global
