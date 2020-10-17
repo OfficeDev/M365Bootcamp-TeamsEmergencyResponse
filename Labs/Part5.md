@@ -10,13 +10,13 @@
 
 In this exercise, you'll add code to the solution which posts a message in the Teams channel when a new map point is added. The completed solution is in the ["Exercise 5" branch](https://github.com/OfficeDev/M365Bootcamp-TeamsEmergencyResponse/tree/Exercise5/Solution/MapViewer) of this repo.
 
-If you don't have developer tools, grab the map-view.sppkg file from the Exercise 5 folder and skip to Step 3.
+If you don't have developer tools, grab the `map-view.sppkg` file from the Exercise 5 folder and skip to Step 3.
 
 ## Step 1: Modify the code
 
 a. Ensure you have downloaded or cloned this repository, and open the [Solution/MapViewer](../Solution/MapViewer/) folder in your code editor.
 
-The [src/webparts/mapViewer/services/GraphService](../Solution/MapViewer/src/webparts/mapViewer/services/GraphService) folder contains the Microsoft Graph code for the solution. Open IGraphService.ts and add a function to the IGraphService interface:
+The [src/webparts/mapViewer/services/GraphService](../Solution/MapViewer/src/webparts/mapViewer/services/GraphService) folder contains the Microsoft Graph code for the solution. Open `IGraphService.ts` and add a function to the `IGraphService` interface:
 
 ~~~typescript
 sendToChannel(message: string): Promise<void | string>;
@@ -24,7 +24,7 @@ sendToChannel(message: string): Promise<void | string>;
 
 The completed file is [here](https://github.com/OfficeDev/M365Bootcamp-TeamsEmergencyResponse/blob/Exercise5/Solution/MapViewer/src/webparts/mapViewer/services/GraphService/IGraphService.ts).
 
-b. In the GraphService.ts file, import a reference to the Teams JavaScript SDK at the top of the file.
+b. In the `GraphService.ts` file, import a reference to the Teams JavaScript SDK at the top of the file.
 
 ~~~typescript
 import * as microsoftTeams from "@microsoft/teams-js";
@@ -191,11 +191,11 @@ gulp package-solution --ship
 
 You need to repeat steps 2 and 3 of Exercise 4 to update your work in SharePoint.
 
-a. Return to the SharePoint App catalog and upload the map-viewer.sppkg file again.
+a. Return to the SharePoint App catalog and upload the `map-viewer.sppkg` file again.
 
 ![Part4](images/Part4-03.png)
 
-b. Return to the API Access screen; you should see the new permission . Select it 1️⃣ and click Approve 2️⃣. 
+b. Return to the **API Access** screen; you should see the new permission . Select it 1️⃣ and use **Approve** 2️⃣. 
 
 ![Part4](images/Part5-01.png)
 
@@ -207,7 +207,7 @@ a. If you're running locally (you chose Option 1 in Exercise 4), ensure your loc
 gulp serve --nobrowser
 ~~~
 
-a. Return to Microsoft Teams and refresh the Map View tab. Add a new point to the map; a notification should appear in the channel.
+a. Return to Microsoft Teams and refresh the **Map View** tab. Add a new point to the map; a notification should appear in the channel.
 
 ![Part4](images/Part5-03.png)
 
