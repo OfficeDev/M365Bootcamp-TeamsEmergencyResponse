@@ -1,6 +1,7 @@
 # Build an Emergency Response solution with Teams and SharePoint
 
-[![Video thumbnail](./Labs/images/videoThumbnail.png)](https://youtu.be/SmrAUfaNDP4)
+[![Video thumbnail](./Labs/images/videoThumbnail.png)](https://youtu.be/JaQSJsxOS0E)
+*Watch the presentation here*
 
 In this half day workshop, you will learn how to build solutions with Microsoft Teams and Microsoft SharePoint. In the process, you will build a simple Emergency Response Center which could be used to coordinate the response to an emergency such as a natural disaster. This could complement the [Crisis Communication Power App template](https://powerapps.microsoft.com/en-us/blog/crisis-communication-a-power-platform-template/), which helps to keep employees informed during a crisis; this solution is for the reponse team themselves.
 
